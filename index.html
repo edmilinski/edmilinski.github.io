@@ -5,10 +5,10 @@
     </body>
     <script>
         function loadFile(fileName, boxId){
-            fetch(fileName).then(resp=> {
-                const box = document.getElementById(boxId);
-                box.value = resp.text();
-            }).catch(err => alert(`Error: ${err}`));
+            fetch(fileName)
+                .then(resp=>resp.text())
+                .then(txt => document.getElementById(boxId).value = txt)
+                .catch(err => alert(`Error: ${err}`));
         }
     </script>
 </html>
