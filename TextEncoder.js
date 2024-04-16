@@ -86,9 +86,6 @@ async function pbkdf2(message, salt, iterations, keyLen, algorithm) {
 
   return new Uint8Array(buffer)
 }
-let ct;
-let prs = aesEncrypt(`test`,"pass123").then(res=>{ct=res; console.log(res)});
-prs.then(res => aesDecrypt(ct, "pass123").then(res=>console.log(res)));
 
 function encodeTextArea(){
   const dataEl = document.getElementById("data");
