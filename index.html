@@ -3,7 +3,7 @@
         <button onclick="loadFile('test1', 'ta')">Load file</button>
         <textarea id="ta"></textarea>
     </body>
-    <script">
+    <script>
         function loadFile(fileName, boxId){
             fetch(fileName).then(res=> document.getElementById(boxId).value = res.content);
         }
