@@ -136,12 +136,12 @@ function saveCypherLocal(){
     alert("Not encoded text");
 }
 
-function loadCypherRemote(boxId){
+function loadCypherRemote(){
   const fileName = prompt("Enter file name","");
   let prom1 = fetch(fileName);
   prom1.then(resp => {
       if(resp.status == 200){
-          resp.text().then(txt => document.getElementById(boxId).value = txt)
+          resp.text().then(txt => document.getElementById("data").value = txt)
       } else alert(`Load file '${fileName}' failed`)      
   })
 }
