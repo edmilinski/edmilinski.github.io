@@ -5,7 +5,7 @@
     </body>
     <script>
         function loadFile(fileName, boxId){
-            fetch(fileName).then(res=> document.getElementById(boxId).value = res.content);
+            fetch(fileName).then(res=> {console.log(res); document.getElementById(boxId).value = res.content});
         }
     </script>
 </html>
