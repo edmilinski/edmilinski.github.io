@@ -5,11 +5,11 @@
     </body>
     <script>
         function loadFile(fileName, boxId){
-            fetch(fileName).then(res=> {
+            fetch(fileName).then(resp=> {
                 debugger
                 console.log(res); 
                 const box = document.getElementById(boxId);
-                box.value = res.content;
+                box.value = resp.text();
             }).catch(err => alert(`Error: ${err}`));
         }
     </script>
