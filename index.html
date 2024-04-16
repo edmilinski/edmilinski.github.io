@@ -1,10 +1,11 @@
 <html>
     <body>
-        <button onclick="loadFile('test1', 'ta')">Load file</button>
+        <button onclick="loadFile('ta')">Load file</button>
         <textarea id="ta" rows="5" cols="80"></textarea>
     </body>
     <script>
-        function loadFile(fileName, boxId){
+        function loadFile(boxId){
+            const fileName = prompt("Enter file name","");
             fetch(fileName)
                 .then(resp=>resp.text())
                 .then(txt => document.getElementById(boxId).value = txt)
