@@ -10,7 +10,7 @@
             prom1.then(resp => {
                 if(resp.status == 200){
                     resp.text().then(txt => document.getElementById(boxId).value = txt)
-                } else alert(`Fetch ${fileName} failed`)      
+                } else alert(`Load file '${fileName}' failed`)      
             })
         }
     </script>
