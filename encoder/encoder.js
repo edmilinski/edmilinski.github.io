@@ -140,4 +140,4 @@ function loadTextRemote(){
 }
 
 // clear text box during inactivity
-setTimeout(()=>{document.getElementById("data").value = ""}, 30 * 60 * 1000)
+setTimeout(()=>{document.getElementById("data").value = ""}, 15 * 60 * 1000)
