@@ -103,19 +103,15 @@ function encodeTextArea(){
 function decodeTextArea(){
   const dataEl = document.getElementById("data");
   const cypherText = dataEl.value.trim();
-  if(cypherText.endsWith("=")) {
     const password = prompt("Enter your password","");
     if(password)
       aesDecrypt(cypherText, password).then(res => dataEl.value = res).catch(err=>alert("Failed to decode"));
-  }
-  else
-    alert("Not encoded data");
 }
 
 function loadCypherLocal(){
   const storageKey= prompt("Enter storage key", "TextEncoder-main");
   const savedCypher = localStorage.getItem(storageKey);
-  if(savedCypher && savedCypher.endsWith("=")) {
+  if(savedCypher) {
     const dataEl = document.getElementById("data");
     dataEl.value = savedCypher;
   }
@@ -125,15 +121,11 @@ function loadCypherLocal(){
 
 function saveCypherLocal(){
   const dataEl = document.getElementById("data");
-  if(dataEl.value.endsWith("=")) {
     const storageKey = prompt("Enter storage key", "TextEncoder-main");
     if(storageKey)
       localStorage.setItem(storageKey, dataEl.value);      
     else
       alert('Save Code cancelled')
-  }
-  else
-    alert("Not encoded text");
 }
 
 function loadCypherRemote(){
