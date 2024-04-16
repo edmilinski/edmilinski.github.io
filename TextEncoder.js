@@ -123,7 +123,7 @@ function saveTextLocal(){
   else {
     const storageKey = prompt("Enter storage key", "TextEncoder-main");
     if(storageKey)
-      localStorage.setItem(storageKey, dataEl.value);      
+      localStorage.setItem(storageKey, txt);      
     else
       alert('Save Code cancelled')  
   }
