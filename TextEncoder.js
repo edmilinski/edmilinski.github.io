@@ -118,7 +118,7 @@ function loadTextLocal(){
 
 function saveTextLocal(){
   const txt = document.getElementById("data").value;
-  if(txt.indexOf(' ') == -1)
+  if(txt.indexOf(' ') !== -1)
     alert('Do not store plain text!');
   else {
     const storageKey = prompt("Enter storage key", "TextEncoder-main");
