@@ -6,10 +6,12 @@
     <script>
         function loadFile(boxId){
             const fileName = prompt("Enter file name","");
-            fetch(fileName)
-                .then(resp=>resp.text())
-                .then(txt => document.getElementById(boxId).value = txt)
-                .catch(err => alert(`Error: ${err}`));
+            let prom1 = fetch(fileName);
+            prom1.then(resp => {
+                if(resp.status == 200){
+                    resp.text().then(txt => document.getElementById(boxId).value = txt)
+                } else alert(`Fetch ${fileName} failed`)      
+            })
         }
     </script>
 </html>
