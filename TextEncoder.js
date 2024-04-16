@@ -105,7 +105,7 @@ function decodeTextArea(){
       aesDecrypt(cypherText, password).then(res => dataEl.value = res).catch(err=>alert("Failed to decode"));
 }
 
-function loadCypherLocal(){
+function loadTextLocal(){
   const storageKey= prompt("Enter storage key", "TextEncoder-main");
   const savedCypher = localStorage.getItem(storageKey);
   if(savedCypher) {
@@ -116,16 +116,20 @@ function loadCypherLocal(){
     alert(`Failed to load storage key '${storageKey}'`);
 }
 
-function saveCypherLocal(){
-  const dataEl = document.getElementById("data");
+function saveTextLocal(){
+  const txt = document.getElementById("data").value;
+  if(txt.indexOf(' ') == -1)
+    alert('Do not store plain text!');
+  else {
     const storageKey = prompt("Enter storage key", "TextEncoder-main");
     if(storageKey)
       localStorage.setItem(storageKey, dataEl.value);      
     else
-      alert('Save Code cancelled')
+      alert('Save Code cancelled')  
+  }
 }
 
-function loadCypherRemote(){
+function loadTextRemote(){
   const fileName = prompt("Enter file name","");
   let prom1 = fetch(fileName);
   prom1.then(resp => {
