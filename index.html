@@ -6,10 +6,11 @@
     <script>
         function loadFile(fileName, boxId){
             fetch(fileName).then(res=> {
+                debugger
                 console.log(res); 
                 const box = document.getElementById(boxId);
                 box.value = res.content;
-            });
+            }).catch(err => alert(`Error: ${err}`));
         }
     </script>
 </html>
