@@ -108,7 +108,7 @@ function decodeData(){
 }
 
 function loadDataLocal(){
-  const storageKey= prompt("Enter storage key", "TextEncoder-main");
+  const storageKey= prompt("Enter storage key", "encoder");
   const savedCypher = localStorage.getItem(storageKey);
   if(savedCypher) {
     const dataEl = document.getElementById("data");
@@ -123,7 +123,7 @@ function saveDataLocal(){
   if(txt.indexOf(' ') !== -1)
     alert('Do not store plain text!');
   else {
-    const storageKey = prompt("Enter storage key", "TextEncoder-main");
+    const storageKey = prompt("Enter storage key", "encoder");
     if(storageKey)
       localStorage.setItem(storageKey, txt);      
     else
