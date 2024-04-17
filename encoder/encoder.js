@@ -99,6 +99,7 @@ function encodeData(){
 }
 
 function decodeData(){
+  setupDelayedScreenClear();
   const dataEl = document.getElementById("data");
   const txtEl = document.getElementById("txt");
   const cypherText = dataEl.value.trim();
@@ -137,22 +138,36 @@ function loadDataRemote(){
   let prom1 = fetch(url);
   prom1.then(resp => {
       if(resp.status == 200){
-          resp.text().then(txt => document.getElementById("data").value = txt)
-      } else alert(`Load file '${fileName}' failed`)      
+          resp.text().then(txt => document.getElementById("data").value = txt);
+      } else alert(`Load file '${fileName}' failed`);      
   })
 }
 
-var gLastFocusTime = new Date().getTime();
+//let lastVisibilityChange = new Date().getTime();
+
+var hTimeOut=0;
+// setupDelayedScreenClear();
 
 // clear screen after long inactivity
-function clearDataOnFocus() {
-  const currentTime = new Date().getTime();
-  if((currentTime - gLastFocusTime) > (5 * 1000)) {
+function setupDelayedScreenClear() {
+  console.log('setupDelayedScreenClear');
+  if(hTimeOut) 
+    clearTimeout(hTimeOut); 
+
+  hTimeOut = setTimeout(()=>{
     document.getElementById("txt").value = "";
-    document.getElementById("data").value = "";    
-  }
+    document.getElementById("data").value = "";
+  }, 15 * 1000);
 }
 
-function onFocusOut() {
-  gLastFocusTime = new Date().getTime();
+/*
+document.onvisibilitychange = () => {
+  
+  const currentTime = new Date().getTime();;
+  if (document.visibilityState && (currentTime - lastVisibilityChange) > 5*1000){
+    document.getElementById("txt").value = "";
+    document.getElementById("data").value = "";
+  }
+  lastVisibilityChange = currentTime;
 }
+*/
