@@ -143,8 +143,6 @@ function loadDataRemote(){
   })
 }
 
-//let lastVisibilityChange = new Date().getTime();
-
 var hTimeOut=0;
 setupDelayedScreenClear();
 
@@ -157,17 +155,5 @@ function setupDelayedScreenClear() {
   hTimeOut = setTimeout(()=>{
     document.getElementById("txt").value = "";
     document.getElementById("data").value = "";
-  }, 5 * 1000);
+  }, 300 * 1000);
 }
-
-/*
-document.onvisibilitychange = () => {
-  
-  const currentTime = new Date().getTime();;
-  if (document.visibilityState && (currentTime - lastVisibilityChange) > 5*1000){
-    document.getElementById("txt").value = "";
-    document.getElementById("data").value = "";
-  }
-  lastVisibilityChange = currentTime;
-}
-*/
