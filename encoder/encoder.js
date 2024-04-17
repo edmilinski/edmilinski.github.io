@@ -142,14 +142,17 @@ function loadDataRemote(){
   })
 }
 
-let lastFocusTime = new Date().getTime();
+var gLastFocusTime = new Date().getTime();
 
 // clear screen after long inactivity
 function clearDataOnFocus() {
   const currentTime = new Date().getTime();
-  if((currentTime - lastFocusTime) > (300 * 1000)) {
+  if((currentTime - gLastFocusTime) > (30 * 1000)) {
     document.getElementById("txt").value = "";
     document.getElementById("data").value = "";    
   }
-  lastFocusTime = currentTime;
+}
+
+function onFocusOut() {
+  gLastFocusTime = new Date().getTime();
 }
