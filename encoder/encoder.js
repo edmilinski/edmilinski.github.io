@@ -99,7 +99,6 @@ function encodeData(){
 }
 
 function decodeData(){
-  setupDelayedScreenClear();
   const dataEl = document.getElementById("data");
   const txtEl = document.getElementById("txt");
   const cypherText = dataEl.value.trim();
@@ -143,17 +142,17 @@ function loadDataRemote(){
   })
 }
 
-var hTimeOut=0;
-setupDelayedScreenClear();
+function clearScreen() {
+  document.getElementById("txt").value = "";
+  document.getElementById("data").value = "";
+}
+
+var lastActionTime= new Date().getTime();
 
 // clear screen after long inactivity
-function setupDelayedScreenClear() {
-  console.log('setupDelayedScreenClear');
-  if(hTimeOut) 
-    clearTimeout(hTimeOut); 
-
-  hTimeOut = setTimeout(()=>{
-    document.getElementById("txt").value = "";
-    document.getElementById("data").value = "";
-  }, 300 * 1000);
+function IfIdleClearText() {
+  const time = new Date().getTime();
+  if(time - lastActionTime > 300 * 1000) 
+    clearScreen();
+  lastActionTime = time;
 }

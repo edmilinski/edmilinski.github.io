@@ -26,13 +26,14 @@
             }
         </style>
     </head>
-    <body onkeydown="setupDelayedScreenClear()" onclick="setupDelayedScreenClear()">
+    <body onkeydown="IfIdleClearText()" onclick="IfIdleClearText()">
         <p class="buttons">
             <button onclick="decodeData()">Decode</button>
             <button onclick="encodeData()">Encode</button>
             <button onclick="saveDataLocal()">Save local</button>
             <button onclick="loadDataLocal()">Load local</button>    
             <button onclick="loadDataRemote()">Load remote</button>
+            <button onclick="clearScreen()">Clear screen</button>
         </p>
         <p style="display: flex;">
             <input type="text" id="data" />&nbsp;
