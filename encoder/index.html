@@ -1,11 +1,27 @@
 <html>
-    <p>
+    <head>
+        <style>
+            .buttons {
+                display: flex;
+                justify-content: space-around;
+            }
+            #data {
+                width: 100%;
+                height: 90%;
+            }
+            button {
+                padding: 10px;
+                font-size: large;
+            }
+        </style>
+    </head>
+    <p class="buttons">
         <button onclick="encodeTextArea()">Encode</button>
         <button onclick="decodeTextArea()">Decode</button>
         <button onclick="saveTextLocal()">Save local</button>
         <button onclick="loadTextLocal()">Load local</button>    
         <button onclick="loadTextRemote()">Load remote</button>    
     </p>
-    <textarea rows="30" cols="80" id="data"></textarea>
+    <textarea rows="25" cols="80" id="data"></textarea>
     <script src="encoder.js"></script>
 </html>
