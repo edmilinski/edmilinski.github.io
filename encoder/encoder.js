@@ -87,17 +87,18 @@ async function pbkdf2(message, salt, iterations, keyLen, algorithm) {
   return new Uint8Array(buffer)
 }
 
-function encodeTextArea(){
-  const dataEl = document.getElementById("data");
-  const plainText = dataEl.value.trim();
+function encodeData(){
+  const txtEl = document.getElementById("txt");
+  const plainText = txtEl.value.trim();
   if(plainText){
+    const dataEl = document.getElementById("data");
     const password = prompt("Enter your password","");
     if(password)
       aesEncrypt(plainText, password).then(res => dataEl.value = res);  
   }
 }
 
-function decodeTextArea(){
+function decodeData(){
   const dataEl = document.getElementById("data");
   const cypherText = dataEl.value.trim();
     const password = prompt("Enter your password","");
@@ -105,7 +106,7 @@ function decodeTextArea(){
       aesDecrypt(cypherText, password).then(res => dataEl.value = res).catch(err=>alert("Failed to decode"));
 }
 
-function loadTextLocal(){
+function loadDataLocal(){
   const storageKey= prompt("Enter storage key", "TextEncoder-main");
   const savedCypher = localStorage.getItem(storageKey);
   if(savedCypher) {
@@ -116,7 +117,7 @@ function loadTextLocal(){
     alert(`Failed to load storage key '${storageKey}'`);
 }
 
-function saveTextLocal(){
+function saveDataLocal(){
   const txt = document.getElementById("data").value;
   if(txt.indexOf(' ') !== -1)
     alert('Do not store plain text!');
@@ -129,7 +130,7 @@ function saveTextLocal(){
   }
 }
 
-function loadTextRemote(){
+function loadDataRemote(){
   const fileName = prompt("Enter file name","");
   let prom1 = fetch(fileName);
   prom1.then(resp => {
@@ -140,4 +141,7 @@ function loadTextRemote(){
 }
 
 // clear text box during inactivity
-setTimeout(()=>{document.getElementById("data").value = ""}, 15 * 60 * 1000)
+setTimeout(()=>{
+  document.getElementById("txt").value = "";
+  document.getElementById("data").value = "";
+}, 15 * 60 * 1000)
