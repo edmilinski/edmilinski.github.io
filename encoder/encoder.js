@@ -157,7 +157,7 @@ function setupDelayedScreenClear() {
   hTimeOut = setTimeout(()=>{
     document.getElementById("txt").value = "";
     document.getElementById("data").value = "";
-  }, 5 * 1000);
+  }, 15 * 1000);
 }
 
 /*
