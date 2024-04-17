@@ -147,7 +147,7 @@ var gLastFocusTime = new Date().getTime();
 // clear screen after long inactivity
 function clearDataOnFocus() {
   const currentTime = new Date().getTime();
-  if((currentTime - gLastFocusTime) > (600 * 1000)) {
+  if((currentTime - gLastFocusTime) > (5 * 1000)) {
     document.getElementById("txt").value = "";
     document.getElementById("data").value = "";    
   }
