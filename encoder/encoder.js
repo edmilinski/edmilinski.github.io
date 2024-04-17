@@ -143,6 +143,7 @@ function loadDataRemote(){
   })
 }
 
+document.onvisibilitychange = () => console.log('onvisibilityChange')
 //let lastVisibilityChange = new Date().getTime();
 
 var hTimeOut=0;
