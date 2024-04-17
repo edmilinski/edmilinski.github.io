@@ -133,7 +133,8 @@ function saveDataLocal(){
 
 function loadDataRemote(){
   const fileName = prompt("Enter file name","");
-  let prom1 = fetch(fileName);
+  const url = `${fileName}?ts=${new Date().getTime()}`;
+  let prom1 = fetch(url);
   prom1.then(resp => {
       if(resp.status == 200){
           resp.text().then(txt => document.getElementById("data").value = txt)
