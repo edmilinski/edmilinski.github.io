@@ -100,10 +100,11 @@ function encodeData(){
 
 function decodeData(){
   const dataEl = document.getElementById("data");
+  const txtEl = document.getElementById("txt");
   const cypherText = dataEl.value.trim();
-    const password = prompt("Enter your password","");
-    if(password)
-      aesDecrypt(cypherText, password).then(res => dataEl.value = res).catch(err=>alert("Failed to decode"));
+  const password = prompt("Enter your password","");
+  if(password)
+    aesDecrypt(cypherText, password).then(res => txtEl.value = res).catch(err=>alert("Failed to decode"));
 }
 
 function loadDataLocal(){
