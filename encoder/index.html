@@ -26,7 +26,7 @@
             }
         </style>
     </head>
-    <body onkeypress="setupDelayedScreenClear()" onclick="setupDelayedScreenClear()">
+    <body onkeydown="setupDelayedScreenClear()" onclick="setupDelayedScreenClear()">
         <p class="buttons">
             <button onclick="decodeData()">Decode</button>
             <button onclick="encodeData()">Encode</button>
@@ -36,7 +36,7 @@
         </p>
         <p style="display: flex;">
             <input type="text" id="data" />&nbsp;
-            <span style="border:1px solid; padding:2px;">v1.3</span>
+            <span style="border:1px solid; padding:2px;">v1.4</span>
         </p>
         <textarea id="txt"></textarea>
         <script src="encoder.js"></script>
