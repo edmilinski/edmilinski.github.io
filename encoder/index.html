@@ -23,16 +23,18 @@
             }
         </style>
     </head>
-    <p class="buttons">
-        <button onclick="encodeData()">Encode</button>
-        <button onclick="decodeData()">Decode</button>
-        <button onclick="saveDataLocal()">Save local</button>
-        <button onclick="loadDataLocal()">Load local</button>    
-        <button onclick="loadDataRemote()">Load remote</button>    
-    </p>
-    <p>
-        <input type="text" id="data" />
-    </p>
-    <textarea id="txt"></textarea>
-    <script src="encoder.js"></script>
+    <body onload="alert(window.innerWidth)">
+        <p class="buttons">
+            <button onclick="encodeData()">Encode</button>
+            <button onclick="decodeData()">Decode</button>
+            <button onclick="saveDataLocal()">Save local</button>
+            <button onclick="loadDataLocal()">Load local</button>    
+            <button onclick="loadDataRemote()">Load remote</button>    
+        </p>
+        <p>
+            <input type="text" id="data" />
+        </p>
+        <textarea id="txt"></textarea>
+        <script src="encoder.js"></script>    
+    </body>
 </html>
