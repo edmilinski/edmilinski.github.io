@@ -16,7 +16,7 @@
                 font-size: large;
             }
             #data {
-                width: 100%;
+                width: 98%;
                 font-size: large;
             }
             @media only screen and (max-width: 1000px) {
@@ -32,12 +32,13 @@
             <button onclick="encodeData()">Encode</button>
             <button onclick="saveDataLocal()">Save local</button>
             <button onclick="loadDataLocal()">Load local</button>    
-            <button onclick="loadDataRemote()">Load remote</button>    
+            <button onclick="loadDataRemote()">Load remote</button>
         </p>
-        <p>
-            <input type="text" id="data" />
+        <p style="display: flex;">
+            <input type="text" id="data" />&nbsp;
+            <span style="border:1px solid; padding:2px;">v1.0</span>
         </p>
         <textarea id="txt"></textarea>
-        <script src="encoder.js"></script>    
+        <script src="encoder.js"></script>
     </body>
 </html>
