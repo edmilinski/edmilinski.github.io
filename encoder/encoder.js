@@ -143,11 +143,10 @@ function loadDataRemote(){
   })
 }
 
-document.onvisibilitychange = () => console.log('onvisibilityChange')
 //let lastVisibilityChange = new Date().getTime();
 
 var hTimeOut=0;
-// setupDelayedScreenClear();
+setupDelayedScreenClear();
 
 // clear screen after long inactivity
 function setupDelayedScreenClear() {
@@ -158,7 +157,7 @@ function setupDelayedScreenClear() {
   hTimeOut = setTimeout(()=>{
     document.getElementById("txt").value = "";
     document.getElementById("data").value = "";
-  }, 10 * 1000);
+  }, 5 * 1000);
 }
 
 /*
