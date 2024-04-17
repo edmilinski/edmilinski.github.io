@@ -145,4 +145,4 @@ function loadDataRemote(){
 setTimeout(()=>{
   document.getElementById("txt").value = "";
   document.getElementById("data").value = "";
-}, 15 * 60 * 1000)
+}, 2 * 60 * 1000)
