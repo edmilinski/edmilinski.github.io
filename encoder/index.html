@@ -3,8 +3,8 @@
         <meta name="viewport" content="width=device-width" />
         <style>
             .buttons {
-                display: flex;
-                justify-content: space-around;
+                display: flow;
+                justify-content: center;
             }
             #txt {
                 width: 100%;
@@ -14,6 +14,7 @@
             button {
                 padding: 5px;
                 font-size: medium;
+                margin: 3px;
             }
             #data {
                 width: 98%;
@@ -30,14 +31,14 @@
         <p class="buttons">
             <button onclick="decodeData()">Decode</button>
             <button onclick="encodeData()">Encode</button>
-            <button onclick="saveDataLocal()">Save local</button>
-            <button onclick="loadDataLocal()">Load local</button>    
             <button onclick="loadDataRemote()">Load remote</button>
+            <button onclick="loadDataLocal()">Load local</button>    
+            <button onclick="saveDataLocal()">Save local</button>
             <button onclick="clearScreen()">Clear screen</button>
         </p>
         <p style="display: flex;">
             <input type="text" id="data" />&nbsp;
-            <span style="border:1px solid; padding:2px;">v2.0</span>
+            <span style="border:1px solid; padding:2px;">v2.1</span>
         </p>
         <textarea id="txt"></textarea>
         <script src="encoder.js"></script>
