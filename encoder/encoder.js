@@ -152,7 +152,7 @@ var lastActionTime= new Date().getTime();
 // clear screen after long inactivity
 function IfIdleClearText() {
   const time = new Date().getTime();
-  if(time - lastActionTime > 300 * 1000) 
+  if(time - lastActionTime > 10 * 1000) 
     clearScreen();
   lastActionTime = time;
 }
