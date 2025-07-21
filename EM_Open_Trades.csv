@@ -1,8 +1,8 @@
 ticker,type,open_date,open_price,pair_ticker,note
 BKLN,Long,2025-07-11,21.0,,
-CIEN,Short,2025-07-16,82.06,FAF-CIEN,
 EUAD,Long,2025-07-11,43.07,,
+SHLD,Long,2025-07-11,60.26,,
+CIEN,Short,2025-07-16,82.06,FAF-CIEN,
 FAF,Long,2025-07-16,54.8,FAF-CIEN,earnings FAF 22/7
 JAZZ,Short,2025-07-17,115.2,KMX-JAZZ,
 KMX,Long,2025-07-17,62.72,KMX-JAZZ,
-SHLD,Long,2025-07-11,60.26,,
