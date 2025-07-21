@@ -11,7 +11,7 @@
   </style>
 </head>
 <body>
-  <h2>Open Trades Summary</h2>
+  <h2>Trade Summary</h2>
   <table id="trades-table">
     <thead>
       <tr id="table-header"></tr>
@@ -58,8 +58,8 @@
         const price = pData['Prices'] || 0;
         const prevClose = pData['PrevClosePrices'] || 0;
 
-        const todayPct = prevClose ? ((price / prevClose - 1) * 100).toFixed(2) : '';
-        const totalPct = open_price ? ((price / parseFloat(open_price) - 1) * 100).toFixed(2) : '';
+        const todayPct = prevClose ? ((price / prevClose - 1) * 100).toFixed(1) : '';
+        const totalPct = open_price ? ((price / parseFloat(open_price) - 1) * 100).toFixed(1) : '';
 
         const rowHtml = [ticker, type, todayPct, totalPct, price.toFixed(2), open_date, open_price, pair_ticker, note]
           .map(val => `<td>${val}</td>`).join('');
