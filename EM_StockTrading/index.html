@@ -61,7 +61,8 @@
         const todayPct = prevClose ? ((price / prevClose - 1) * 100).toFixed(1) : '';
         const totalPct = open_price ? ((price / parseFloat(open_price) - 1) * 100).toFixed(1) : '';
 
-        const rowHtml = [createTickerLink(ticker), type, todayPct, totalPct, price.toFixed(2), open_date, open_price, pair_ticker, note]
+        const typeLink = `<a href="https://finviz.com/quote.ashx?t=${ticker}&p=d" target="stocks">${type}</a>`;
+        const rowHtml = [createTickerLink(ticker), typeLink, todayPct, totalPct, price.toFixed(2), open_date, open_price, pair_ticker, note]
           .map(val => `<td>${val}</td>`).join('');
 
         body.innerHTML += `<tr>${rowHtml}</tr>`;
