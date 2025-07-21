@@ -1,1 +1,8 @@
-Hello from C# at 20/07/2025 9:57:07 PM
+ticker,type,buy_date,buy_price,note
+BKLN,Long,2025-07-11,21.0,
+CIEN,Short,,,
+EUAD,Long,2025-07-11,43.07,
+FAF,Long,2025-07-16,54.8,earnings FAF 22/7
+JAZZ,Short,,,
+KMX,Long,2025-07-17,62.72,
+SHLD,Long,2025-07-11,60.26,
