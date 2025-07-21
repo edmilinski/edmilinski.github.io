@@ -1,4 +1,5 @@
 ticker,type,open_date,open_price,pair_ticker,note
+QQQ,Long,2025-07-21,565.34,,
 KMX,Long,2025-07-17,62.72,KMX-JAZZ,
 JAZZ,Short,2025-07-17,115.2,KMX-JAZZ,
 BKLN,Long,2025-07-11,21.0,,
