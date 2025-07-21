@@ -1,4 +1,4 @@
-ticker,type,buy_date,buy_price,pair_ticker,note
+ticker,type,open_date,open_price,pair_ticker,note
 BKLN,Long,2025-07-11,21.0,,
 CIEN,Short,,,FAF-CIEN,
 EUAD,Long,2025-07-11,43.07,,
