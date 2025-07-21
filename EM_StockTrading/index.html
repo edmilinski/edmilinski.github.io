@@ -47,7 +47,7 @@
     function populateTable(trades, prices) {
       const headerRow = document.getElementById('table-header');
       const body = document.getElementById('table-body');
-      const headers = ['ticker', 'type', 'Today %', 'Total %', 'Price', 'open_date', 'open_price', 'pair_ticker', 'note'];
+      const headers = ['Stock', 'Type', 'Today %', 'Total %', 'Price', 'Open date', 'Open price', 'Pair ticker', 'note'];
 
       headerRow.innerHTML = headers.map(h => `<th>${h}</th>`).join('');
 
