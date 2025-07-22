@@ -1,4 +1,8 @@
 ticker,type,open_date,open_price,pair_ticker,note
+CDX,Long,2025-07-22,22.95,,
+VGT,Long,2025-07-22,676.5,,
+AIQ,Long,2025-07-22,44.0,,
+NATO,Long,2025-07-22,35.953,,
 QQQ,Long,2025-07-21,565.34,,
 KMX,Long,2025-07-17,62.72,KMX-JAZZ,
 JAZZ,Short,2025-07-17,115.2,KMX-JAZZ,
