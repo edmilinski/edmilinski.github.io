@@ -1,4 +1,5 @@
 ticker,type,open_date,open_price,pair_ticker,note
+PGR,Long,2025-07-22,245.9,,zacs #1
 CDX,Long,2025-07-22,22.95,,
 VGT,Long,2025-07-22,676.5,,
 AIQ,Long,2025-07-22,44.0,,
