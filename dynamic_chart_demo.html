@@ -18,15 +18,14 @@
   <div class="chart-container">
     <div class="chart" id="chart1"></div>
     <div class="chart" id="chart2"></div>
-    <div class="chart" id="chart3"></div>
   </div>
 
   <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
   <script>
     function addChart(containerId, symbol) {
       new TradingView.widget({
-        "width": 420,
-        "height": 400,
+        "width": 620,
+        "height": 600,
         "symbol": symbol,
         "interval": "D",
         "timezone": "Etc/UTC",
@@ -40,7 +39,6 @@
       });
     }
 
-    addChart("chart1", "AAPL");
     addChart("chart2", "MSFT");
     addChart("chart3", "TSLA");
   </script>
