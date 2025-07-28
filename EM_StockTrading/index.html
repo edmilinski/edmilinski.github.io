@@ -47,13 +47,13 @@
     function populateTable(trades, prices) {
       const headerRow = document.getElementById('table-header');
       const body = document.getElementById('table-body');
-      const headers = ['#', 'Stock', 'Type', 'Today %', 'Total %', 'Price', 'Open date', 'Open price', 'Pair ticker', 'note'];
+      const headers = ['#', 'Stock', 'Type', 'Today %', 'Total %', 'Price', 'Open date', 'Open price', 'note'];
     
       headerRow.innerHTML = headers.map(h => `<th>${h}</th>`).join('');
     
       for (let i = 1; i < trades.length; i++) {
         const row = trades[i];
-        const [ticker, type, open_date, open_price, pair_ticker, note] = row;
+        const [ticker, type, open_date, open_price, note] = row;
         const pData = prices[ticker] || {};
         const price = pData['Prices'] || 0;
         const prevClose = pData['PrevClosePrices'] || 0;
@@ -71,7 +71,6 @@
           `<td>${price.toFixed(2)}</td>`,
           `<td>${open_date}</td>`,
           `<td>${open_price}</td>`,
-          `<td>${pair_ticker}</td>`,
           `<td>${note}</td>`
         ].join('');
     
