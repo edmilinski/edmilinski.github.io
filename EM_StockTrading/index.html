@@ -38,7 +38,7 @@
         for (let j = 2; j < row.length; j++) {
           const ticker = headers[j];
           if (!prices[ticker]) prices[ticker] = {};
-          prices[ticker][type] = parseFloat(row[j]) / 1000;
+          prices[ticker][type] = parseFloat(row[j]) / 100;
         }
       }
       return prices;
