@@ -47,24 +47,34 @@
     function populateTable(trades, prices) {
       const headerRow = document.getElementById('table-header');
       const body = document.getElementById('table-body');
-      const headers = ['Stock', 'Type', 'Today %', 'Total %', 'Price', 'Open date', 'Open price', 'Pair ticker', 'note'];
-
+      const headers = ['#', 'Stock', 'Type', 'Today %', 'Total %', 'Price', 'Open date', 'Open price', 'Pair ticker', 'note'];
+    
       headerRow.innerHTML = headers.map(h => `<th>${h}</th>`).join('');
-
+    
       for (let i = 1; i < trades.length; i++) {
         const row = trades[i];
         const [ticker, type, open_date, open_price, pair_ticker, note] = row;
         const pData = prices[ticker] || {};
         const price = pData['Prices'] || 0;
         const prevClose = pData['PrevClosePrices'] || 0;
-
+    
         const todayPct = prevClose ? ((price / prevClose - 1) * 100).toFixed(1) : '';
         const totalPct = open_price ? ((price / parseFloat(open_price) - 1) * 100).toFixed(1) : '';
-
+    
         const typeLink = `<a href="https://finviz.com/quote.ashx?t=${ticker}&p=d" target="stocks">${type}</a>`;
-        const rowHtml = [createTickerLink(ticker), typeLink, todayPct, totalPct, price.toFixed(2), open_date, open_price, pair_ticker, note]
-          .map(val => `<td>${val}</td>`).join('');
-
+        const rowHtml = [
+          `<td>${i}</td>`,  // row number
+          `<td>${createTickerLink(ticker)}</td>`,
+          `<td>${typeLink}</td>`,
+          `<td>${todayPct}</td>`,
+          `<td>${totalPct}</td>`,
+          `<td>${price.toFixed(2)}</td>`,
+          `<td>${open_date}</td>`,
+          `<td>${open_price}</td>`,
+          `<td>${pair_ticker}</td>`,
+          `<td>${note}</td>`
+        ].join('');
+    
         body.innerHTML += `<tr>${rowHtml}</tr>`;
       }
     }
