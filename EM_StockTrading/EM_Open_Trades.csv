@@ -1,4 +1,6 @@
 ticker,type,open_date,open_price,pair_ticker,note
+RKT,Short,2025-08-07,17.63,,
+FRPT,Long,2025-08-07,64.25,,
 JEPQ,Long,2025-07-31,55.51,,
 AMLP,Long,2025-07-31,49.8,,
 XLC,Long,2025-07-29,106.85,,
