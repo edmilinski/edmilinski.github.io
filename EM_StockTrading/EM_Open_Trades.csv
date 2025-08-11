@@ -1,4 +1,6 @@
 ticker,type,open_date,open_price,pair_ticker,note
+CC,Long,2025-08-11,11.635,,
+TKO,Short,2025-08-11,180.45,,
 JEPQ,Long,2025-07-31,55.51,,
 AMLP,Long,2025-07-31,49.923,,
 XLC,Long,2025-07-29,106.85,,
