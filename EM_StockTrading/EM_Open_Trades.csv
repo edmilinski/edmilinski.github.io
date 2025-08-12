@@ -1,6 +1,6 @@
 ticker,type,open_date,open_price,pair_ticker,note
-CHEF,Long,2025-08-12,63.0,,
-TRN,Short,2025-08-12,28.44,,
+CHEF,Long,2025-08-12,63.0,CHEF-TRN,RSI
+TRN,Short,2025-08-12,28.44,CHEF-TRN,RSI pair
 HSY,Long,2025-08-12,176.6,,
 APA,Short,2025-08-12,20.28,,
 JEPQ,Long,2025-07-31,55.51,,
