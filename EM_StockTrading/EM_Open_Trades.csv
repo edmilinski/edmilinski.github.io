@@ -1,7 +1,7 @@
 ticker,type,open_date,open_price,pair_ticker,note
-HRB,Long,2025-08-13,49.06,AZTA-HRB,rsi diff to sector. pair
+HRB,Long,2025-08-13,49.06,HRB-AZTA,rsi diff to sector. pair
 AZTA,Short,2025-08-13,31.86,,big change reverse ?
-DASH,Long,2025-08-13,252.6,DINO-DASH,rsi to sector. pair
+DASH,Long,2025-08-13,252.6,DASH-DINO,rsi to sector. pair
 DINO,Short,2025-08-13,44.7,,
 OLLI,Long,2025-08-13,134.85,OLLI-CIVI,RSI to sector. pair
 CIVI,Short,2025-08-13,32.6,,
