@@ -1,16 +1,18 @@
 ticker,type,open_date,open_price,pair_ticker,note
 BIRK,Long,2025-08-14,48.23,BIRK-HIW,
+WING,Long,2025-08-14,324.8,WING-REXR,
+REXR,Short,2025-08-14,37.82,WING-REXR,
 HIW,Short,2025-08-14,29.8,BIRK-HIW,
-HRB,Long,2025-08-13,49.06,HRB-AZTA,rsi diff to sector. pair
-DASH,Long,2025-08-13,252.6,DASH-DINO,rsi to sector. pair
 OLLI,Long,2025-08-13,134.85,OLLI-CIVI,RSI to sector. pair
+DASH,Long,2025-08-13,252.6,DASH-DINO,rsi to sector. pair
+HRB,Long,2025-08-13,49.06,HRB-AZTA,rsi diff to sector. pair
 CIVI,Short,2025-08-13,32.6,,
-JEPQ,Long,2025-07-31,55.51,,
 AMLP,Long,2025-07-31,49.923,,
+JEPQ,Long,2025-07-31,55.51,,
 IAI,Long,2025-07-28,174.85,,
 IGV,Long,2025-07-23,110.0,,
-VWRA.L,Long,2025-07-22,154.4,,
 CDX,Long,2025-07-22,22.95,,
 NATO,Long,2025-07-22,35.953,,
+VWRA.L,Long,2025-07-22,154.4,,
 BKLN,Long,2025-07-11,20.94,,
 SHLD,Long,2025-07-11,60.26,,
