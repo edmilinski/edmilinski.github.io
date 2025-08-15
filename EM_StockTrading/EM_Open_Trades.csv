@@ -1,4 +1,8 @@
 ticker,type,open_date,open_price,pair_ticker,note
+JNJ,Short,2025-08-15,176.77,CMS-JNJ,coint pair
+CMS,Long,2025-08-15,72.34,CMS-JNJ,coint pair
+EHC,Short,2025-08-15,119.96,MORN-EHC,coint pair
+MORN,Long,2025-08-15,257.66,MORN-EHC,coint pair
 T,Short,2025-08-15,28.99,BJ-T,coint pair
 BJ,Long,2025-08-15,103.15,BJ-T,Earnings 22 aug
 EWI,Short,2025-08-15,51.84,ICE-EWI,coint pair
