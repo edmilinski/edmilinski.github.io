@@ -1,4 +1,6 @@
 ticker,type,open_date,open_price,pair_ticker,note
+EWI,Short,2025-08-15,51.84,ICE-EWI,
+ICE,Long,2025-08-15,181.85,ICE-EWI,
 REXR,Short,2025-08-14,37.82,WING-REXR,
 OLLI,Long,2025-08-13,134.85,OLLI-CIVI,RSI to sector. pair
 DASH,Long,2025-08-13,252.6,DASH-DINO,rsi to sector. pair
