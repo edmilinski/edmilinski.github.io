@@ -1,5 +1,4 @@
 ticker,type,open_date,open_price,pair_ticker,note
-BIRK,Long,2025-08-14,48.23,BIRK-HIW,
 REXR,Short,2025-08-14,37.82,WING-REXR,
 OLLI,Long,2025-08-13,134.85,OLLI-CIVI,RSI to sector. pair
 DASH,Long,2025-08-13,252.6,DASH-DINO,rsi to sector. pair
