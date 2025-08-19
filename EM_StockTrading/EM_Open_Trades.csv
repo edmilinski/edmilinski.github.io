@@ -1,7 +1,6 @@
 ticker,type,open_date,open_price,pair_ticker,note
 FSLR,Short,2025-08-18,218.92,ENPH-FSLR,zscore pair
 ENPH,Long,2025-08-18,35.96,ENPH-FSLR,zscore pair
-JNJ,Short,2025-08-15,176.77,CMS-JNJ,coint pair
 CMS,Long,2025-08-15,72.34,CMS-JNJ,coint pair
 EHC,Short,2025-08-15,119.96,MORN-EHC,coint pair
 MORN,Long,2025-08-15,257.66,MORN-EHC,coint pair
