@@ -1,9 +1,7 @@
 ticker,type,open_date,open_price,pair_ticker,note
 FSLR,Short,2025-08-18,218.92,ENPH-FSLR,zscore pair
-ENPH,Long,2025-08-18,35.96,ENPH-FSLR,zscore pair
 CMS,Long,2025-08-15,72.34,CMS-JNJ,coint pair
 MORN,Long,2025-08-15,257.66,MORN-EHC,coint pair
-BJ,Long,2025-08-15,103.15,BJ-T,Earnings 22 aug
 EWI,Short,2025-08-15,51.84,ICE-EWI,coint pair
 DASH,Long,2025-08-13,252.6,DASH-DINO,rsi to sector. pair
 HRB,Long,2025-08-13,49.06,HRB-AZTA,rsi diff to sector. pair
