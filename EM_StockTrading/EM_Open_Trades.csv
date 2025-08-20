@@ -1,4 +1,6 @@
 ticker,type,open_date,open_price,pair_ticker,note
+TNL,Short,2025-08-20,58.54,TRMB-TNL,
+TRMB,Long,2025-08-20,79.76,TRMB-TNL,TNL  VAC PK HST USB MAR ST PNC TRMB IJR TFC FITB CFG CG KEY CPAY
 FSLR,Short,2025-08-18,218.92,ENPH-FSLR,zscore pair
 CMS,Long,2025-08-15,72.34,CMS-JNJ,coint pair
 MORN,Long,2025-08-15,257.66,MORN-EHC,coint pair
