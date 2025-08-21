@@ -1,5 +1,4 @@
 ticker,type,open_date,open_price,pair_ticker,note
-PEG,Long,2025-08-20,85.35,PEG-ETR,ETR  XLU AEE OGE NI XEL ATO WEC DTE PPL IDA PNW CMS AEP LNT PEG
 CI,Short,2025-08-20,305.02,MOH-CI,
 FSLR,Short,2025-08-18,218.92,ENPH-FSLR,zscore pair
 AMLP,Long,2025-07-31,49.923,,
