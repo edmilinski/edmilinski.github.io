@@ -1,7 +1,6 @@
 ticker,type,open_date,open_price,pair_ticker,note
 WMT,Long,2025-08-21,97.67,,zscore diff
 ALL,Long,2025-08-21,206.82,,coint zscore diff
-PFE,Short,2025-08-21,25.69,,MRK  XLV BMY PFE VTRS NVR BMRN ABBV LLY TECH MHK DHR LEN FBIN TGT TREX
 CI,Short,2025-08-20,305.02,MOH-CI,
 AMLP,Long,2025-07-31,49.923,,
 JEPQ,Long,2025-07-31,55.51,,
