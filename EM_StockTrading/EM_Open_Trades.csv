@@ -1,7 +1,6 @@
 ticker,type,open_date,open_price,pair_ticker,note
 VICI,Short,2025-08-22,33.42,CASY-VICI,zscore pair
 ZM,Short,2025-08-22,82.42,TDC-ZM,TDC ZM zscore pair
-TDC,Long,2025-08-22,21.39,TDC-ZM,TDC ZM zscore pair
 WMT,Long,2025-08-21,97.67,,zscore diff
 AMLP,Long,2025-07-31,49.923,,
 JEPQ,Long,2025-07-31,55.51,,
