@@ -1,4 +1,6 @@
 ticker,type,open_date,open_price,pair_ticker,note
+DVN,Short,2025-08-25,35.72,CSX-DVN,
+CSX,Long,2025-08-25,32.85,CSX-DVN,
 VICI,Short,2025-08-22,33.42,CASY-VICI,zscore pair
 ZM,Short,2025-08-22,82.42,TDC-ZM,TDC ZM zscore pair
 AMLP,Long,2025-07-31,49.923,,
