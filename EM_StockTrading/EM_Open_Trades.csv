@@ -1,6 +1,5 @@
 ticker,type,open_date,open_price,pair_ticker,note
 VICI,Short,2025-08-22,33.42,CASY-VICI,zscore pair
-CASY,Long,2025-08-22,502.59,CASY-VICI,zscore pair
 ZM,Short,2025-08-22,82.42,TDC-ZM,TDC ZM zscore pair
 TDC,Long,2025-08-22,21.39,TDC-ZM,TDC ZM zscore pair
 TER,Short,2025-08-22,116.05,CMI-TER,zscore pair. did not buy long. CMI RSI high
