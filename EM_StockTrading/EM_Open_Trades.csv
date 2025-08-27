@@ -1,4 +1,5 @@
 ticker,type,open_date,open_price,pair_ticker,note
+FMC,Short,2025-08-27,39.41,,
 DELL,Long,2025-08-27,131.53,,
 PPC,Long,2025-08-27,44.711,,
 W,Long,2025-08-25,73.515,W-SOFI,
