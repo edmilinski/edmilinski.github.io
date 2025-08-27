@@ -1,4 +1,6 @@
 ticker,type,open_date,open_price,pair_ticker,note
+VIRT,Short,2025-08-27,43.16,,
+RPRX,Long,2025-08-27,35.97,,
 FMC,Short,2025-08-27,39.41,,
 DELL,Long,2025-08-27,131.53,,
 PPC,Long,2025-08-27,44.711,,
