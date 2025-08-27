@@ -1,8 +1,6 @@
 ticker,type,open_date,open_price,pair_ticker,note
 SOFI,Short,2025-08-25,26.26,W-SOFI,
 W,Long,2025-08-25,73.25,W-SOFI,
-DVN,Short,2025-08-25,35.72,CSX-DVN,
-VICI,Short,2025-08-22,33.42,CASY-VICI,zscore pair
 AMLP,Long,2025-07-31,49.923,,
 JEPQ,Long,2025-07-31,55.51,,
 IAI,Long,2025-07-28,174.85,,
