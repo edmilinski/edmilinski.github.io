@@ -53,6 +53,7 @@
       headerRow.innerHTML = headers.map(h => `<th>${h}</th>`).join('');
     
       for (let i = 1; i < trades.length; i++) {
+        debugger
         const row = trades[i];
         const [ticker, type, open_date, open_price, note] = row;
         const pData = prices[ticker] || {};
