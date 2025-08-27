@@ -1,8 +1,7 @@
 ticker,type,open_date,open_price,pair_ticker,note
-W,Long,2025-08-27,73.78,,
 DELL,Long,2025-08-27,131.53,,
 PPC,Long,2025-08-27,44.711,,
-W,Long,2025-08-25,73.25,W-SOFI,
+W,Long,2025-08-25,73.515,W-SOFI,
 AMLP,Long,2025-07-31,49.923,,
 JEPQ,Long,2025-07-31,55.51,,
 IAI,Long,2025-07-28,174.85,,
