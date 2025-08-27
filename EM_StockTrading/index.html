@@ -24,7 +24,6 @@
     const pricesUrl = 'https://edmilinski.github.io/EM_StockTrading/Russell_1000_Changes.csv';
 
     async function fetchCSV(url) {
-      debugger
       const res = await fetch(url);
       const text = await res.text();
       return text.trim().split('\n').map(line => line.split(','));
@@ -53,7 +52,6 @@
       headerRow.innerHTML = headers.map(h => `<th>${h}</th>`).join('');
     
       for (let i = 1; i < trades.length; i++) {
-        debugger
         const row = trades[i];
         const [ticker, type, open_date, open_price, note] = row;
         const pData = prices[ticker] || {};
@@ -123,7 +121,6 @@
         fetchCSV(openTradesUrl),
         fetchCSV(pricesUrl)
       ]);
-      debugger
       const prices = parsePrices(pricesCsv);
       populateTable(tradesCsv, prices);
     }
