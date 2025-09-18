@@ -1,8 +1,6 @@
 ticker,type,open_date,open_price,pair_ticker,note
 OC,Long,2025-09-17,145.94,OC-VOYA,
-AAON,Long,2025-09-17,79.5,AAON-HLI,
 STLD,Short,2025-09-17,138.8,PNFP-STLD,
-WBS,Long,2025-09-17,60.24,WBS-OMF,
 COKE,Long,2025-09-17,118.8,COKE-KEYS,
 AMLP,Long,2025-07-31,49.923,,
 JEPQ,Long,2025-07-31,55.51,,
