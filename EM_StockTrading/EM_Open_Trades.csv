@@ -1,9 +1,7 @@
 ticker,type,open_date,open_price,pair_ticker,note
 XLC,Long,2025-09-24,117.57,,
 FND,Long,2025-09-22,81.23,FND-HPE,
-SNDR,Long,2025-09-22,22.04,SNDR-DOV,
 COKE,Long,2025-09-17,118.8,COKE-KEYS,
-OC,Long,2025-09-17,145.94,OC-VOYA,
 STLD,Short,2025-09-17,138.8,PNFP-STLD,
 JEPQ,Long,2025-07-31,55.51,,
 IAI,Long,2025-07-28,174.85,,
