@@ -1,7 +1,6 @@
 ticker,type,open_date,open_price,pair_ticker,note
 XLC,Long,2025-09-24,117.57,,
 COKE,Long,2025-09-17,118.8,COKE-KEYS,
-STLD,Short,2025-09-17,138.8,PNFP-STLD,
 JEPQ,Long,2025-07-31,55.51,,
 IAI,Long,2025-07-28,174.85,,
 CDX,Long,2025-07-22,22.95,,
