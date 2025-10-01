@@ -1,8 +1,7 @@
 ticker,type,open_date,open_price,pair_ticker,note
-KSS,Long,2025-10-01,15.63,,
+KSS,Long,2025-10-01,15.63,,at lower band
 COF,Long,2025-10-01,215.65,,at lower band
 VGT,Long,2025-09-30,745.23,,
-AZTA,Long,2025-09-30,28.26,,at lower band
 XLC,Long,2025-09-24,118.09,,
 JEPQ,Long,2025-07-31,55.51,,
 IAI,Long,2025-07-28,174.85,,
