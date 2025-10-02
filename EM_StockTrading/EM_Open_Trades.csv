@@ -1,10 +1,10 @@
 ticker,type,open_date,open_price,pair_ticker,note
-ILMN,Short,2025-10-02,99.6,,
+BMY,Short,2025-10-02,46.53,,at upper band
+ILMN,Short,2025-10-02,99.6,,at upper band
 RVTY,Short,2025-10-02,90.8,,at upper band
 S,Long,2025-10-02,17.55,,at lower band
 NCLH,Long,2025-10-02,24.36,,at lower band
 GTLB,Long,2025-10-02,45.24,,at lower band
-OVV,Long,2025-10-01,40.59,,at lower band
 KSS,Long,2025-10-01,15.63,,at lower band
 COF,Long,2025-10-01,215.65,,at lower band
 VGT,Long,2025-09-30,745.23,,
