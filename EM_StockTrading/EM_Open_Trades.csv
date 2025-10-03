@@ -1,8 +1,7 @@
 ticker,type,open_date,open_price,pair_ticker,note
-BKR,Long,2025-10-02,48.7,,
+BKR,Long,2025-10-03,48.7,,at lower band. before open
 CG,Long,2025-10-02,61.69,,at lower band
 U,Long,2025-10-02,38.62,,at lower band
-BMY,Short,2025-10-02,46.53,,at upper band
 ILMN,Short,2025-10-02,99.6,,at upper band
 RVTY,Short,2025-10-02,90.8,,at upper band
 DBX,Long,2025-10-02,29.71,,at lower band
