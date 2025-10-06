@@ -1,4 +1,5 @@
 ticker,type,open_date,open_price,pair_ticker,note
+FTEC,Long,2025-10-06,227.77,,
 GMED,Short,2025-10-06,60.04,,at upper band. sector rsi high
 TFX,Short,2025-10-06,129.01,,at upper band. sector rsi high
 RBLX,Long,2025-10-06,125.48,,at lower band. sector rsi low
