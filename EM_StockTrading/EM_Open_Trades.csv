@@ -1,4 +1,5 @@
 ticker,type,open_date,open_price,pair_ticker,note
+IR,Long,2025-10-10,79.25,,higher lows
 LLYVK,Long,2025-10-09,88.59,,
 HUM,Short,2025-10-07,295.11,,at upper band. sector rsi high
 BEPC,Short,2025-10-07,37.98,,at upper band. sector rsi high
