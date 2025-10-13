@@ -1,4 +1,5 @@
 ticker,type,open_date,open_price,pair_ticker,note
+MOS,Long,2025-10-13,31.52,,
 SWK,Long,2025-10-13,65.86,,
 RH,Long,2025-10-13,179.87,,below lower band. low rsi
 CUZ,Long,2025-10-10,27.28,,RSI < 30. above resistance
