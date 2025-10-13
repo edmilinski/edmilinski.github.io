@@ -1,11 +1,9 @@
 ticker,type,open_date,open_price,pair_ticker,note
-PATH,Short,2025-10-10,17.73,,
 CUZ,Long,2025-10-10,27.28,,RSI < 30. above resistance
 ALSN,Long,2025-10-10,81.6,,at lower band
 IR,Long,2025-10-10,79.25,,higher lows
 LLYVK,Long,2025-10-09,88.59,,
 HUM,Short,2025-10-07,295.11,,at upper band. sector rsi high
-BEPC,Short,2025-10-07,37.98,,at upper band. sector rsi high
 IXG,Long,2025-10-06,116.49,,long term invest in ETF ? did not check RSI or anything
 FTEC,Long,2025-10-06,227.77,,long term invest in ETF ? did not check RSI or anything
 COF,Long,2025-10-01,215.65,,at lower band
