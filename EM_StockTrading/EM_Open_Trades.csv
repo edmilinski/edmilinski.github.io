@@ -1,4 +1,6 @@
 ticker,type,open_date,open_price,pair_ticker,note
+SWK,Long,2025-10-13,65.86,,
+RH,Long,2025-10-13,179.87,,below lower band. low rsi
 CUZ,Long,2025-10-10,27.28,,RSI < 30. above resistance
 ALSN,Long,2025-10-10,81.6,,at lower band
 IR,Long,2025-10-10,79.25,,higher lows
