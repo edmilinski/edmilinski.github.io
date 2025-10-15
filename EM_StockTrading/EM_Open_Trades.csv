@@ -1,7 +1,6 @@
 ticker,type,open_date,open_price,pair_ticker,note
 MOS,Long,2025-10-13,31.52,,below band. low rsi
 CUZ,Long,2025-10-10,27.28,,RSI < 30. above resistance
-ALSN,Long,2025-10-10,81.6,,at lower band
 IR,Long,2025-10-10,79.25,,higher lows
 IXG,Long,2025-10-06,116.49,,long term invest in ETF ? did not check RSI or anything
 FTEC,Long,2025-10-06,227.77,,long term invest in ETF ? did not check RSI or anything
