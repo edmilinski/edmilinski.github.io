@@ -1,4 +1,5 @@
 ticker,type,open_date,open_price,pair_ticker,note
+TRGP,Long,2025-10-15,151.02,,low rsi. at lower band
 MOS,Long,2025-10-13,31.52,,below band. low rsi
 CUZ,Long,2025-10-10,27.28,,RSI < 30. above resistance
 IR,Long,2025-10-10,79.25,,higher lows
