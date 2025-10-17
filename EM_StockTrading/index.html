@@ -21,12 +21,29 @@
   <div id="widget-container"></div>
   <script>
     const openTradesUrl = 'https://edmilinski.github.io/EM_StockTrading/EM_Open_Trades.csv';
-    const pricesUrl = 'https://edmilinski.github.io/EM_StockTrading/Russell_1000_Changes.csv';
+    const pricesUrl = 'https://edmilinski.github.io/EM_StockTrading/Russell_1000_Prices.csv';
 
     async function fetchCSV(url) {
       const res = await fetch(url);
       const text = await res.text();
       return text.trim().split('\n').map(line => line.split(','));
+    }
+
+    function parsePricesCSV(csvText) {
+      const lines = csvText.trim().split("\n");
+      const result = {};
+
+      // skip header line
+      for (let i = 1; i < lines.length; i++) {
+        const parts = lines[i].split(",");
+        const symbol = parts[0];
+        result[symbol] = {
+          change_pct: parseFloat(parts[1]),
+          prev_close: (parseInt(parts[2], 10) / 100).toFixed(2),
+          price: (parseInt(parts[3], 10) / 100).toFixed(2)          
+        };
+      }
+      return result;
     }
 
     function parsePrices(data) {
@@ -55,10 +72,10 @@
         const row = trades[i];
         const [ticker, type, open_date, open_price, note] = row;
         const pData = prices[ticker] || {};
-        const price = pData['Prices'] || 0;
-        const prevClose = pData['PrevClosePrices'] || 0;
+        const price = pData['price'] || 0;
+        const prevClose = pData['prev_close'] || 0;
+        const todayPct = pData['change_pct'] || 0;
     
-        const todayPct = prevClose ? ((price / prevClose - 1) * 100).toFixed(1) : '';
         const totalPct = open_price ? ((price / parseFloat(open_price) - 1) * 100).toFixed(1) : '';
     
         const typeLink = `<a href="https://finviz.com/quote.ashx?t=${ticker}&p=d" target="stocks">${type}</a>`;
@@ -121,7 +138,8 @@
         fetchCSV(openTradesUrl),
         fetchCSV(pricesUrl)
       ]);
-      const prices = parsePrices(pricesCsv);
+      debugger
+      const prices = parsePricesCSV(pricesCsv);
       populateTable(tradesCsv, prices);
     }
 

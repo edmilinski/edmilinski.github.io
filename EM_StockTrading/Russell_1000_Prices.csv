@@ -1,4 +1,4 @@
-symbol,change_%,prev_close,price,2025-10-16 16:00
+symbol,change_pct,prev_close,price,2025-10-16 16:00
 A,1.0,13965,14110
 AA,1.8,3646,3713
 AAL,-4.9,1250,1189
