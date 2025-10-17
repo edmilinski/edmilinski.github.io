@@ -29,18 +29,17 @@
       return text.trim().split('\n').map(line => line.split(','));
     }
 
-    function parsePricesCSV(csvText) {
-      const lines = csvText.trim().split("\n");
+    function parsePricesCSV(csvData) {
       const result = {};
 
       // skip header line
-      for (let i = 1; i < lines.length; i++) {
-        const parts = lines[i].split(",");
-        const symbol = parts[0];
+      for (let i = 1; i < csvData.length; i++) {
+        const row = csvData[i];
+        const symbol = row[0];
         result[symbol] = {
-          change_pct: parseFloat(parts[1]),
-          prev_close: (parseInt(parts[2], 10) / 100).toFixed(2),
-          price: (parseInt(parts[3], 10) / 100).toFixed(2)          
+          change_pct: parseFloat(row[1]),
+          prev_close: (parseInt(row[2], 10) / 100).toFixed(2),
+          price: (parseInt(row[3], 10) / 100).toFixed(2)          
         };
       }
       return result;
