@@ -63,18 +63,25 @@
     function populateTable(trades, prices) {
       const headerRow = document.getElementById('table-header');
       const body = document.getElementById('table-body');
-      const headers = ['#', 'Stock', 'Type', 'Today %', 'Total %', 'Price', 'Open date', 'Open price', 'note'];
+      const headers = ['#', 'Stock', 'Type', 'Today %', 'Total %', 'Price', 'Open date', 'Days', 'Open price'];
     
       headerRow.innerHTML = headers.map(h => `<th>${h}</th>`).join('');
     
       for (let i = 1; i < trades.length; i++) {
         const row = trades[i];
-        const [ticker, type, open_date, open_price, note] = row;
+        const [ticker, type, open_date, open_price] = row;
         const pData = prices[ticker] || {};
         const price = pData['price'] || 0;
         const prevClose = pData['prev_close'] || 0;
         const todayPct = pData['change_pct'] || 0;
-    
+
+        const openDate = new Date(open_date);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const diffMs = today - openDate;
+        // Convert milliseconds to days
+        const openDays = Math.round(diffMs / (1000 * 60 * 60 * 24));        
+
         const totalPct = open_price ? ((price / parseFloat(open_price) - 1) * 100).toFixed(1) : '';
     
         const typeLink = `<a href="https://finviz.com/quote.ashx?t=${ticker}&p=d" target="stocks">${type}</a>`;
@@ -86,8 +93,8 @@
           `<td>${totalPct}</td>`,
           `<td>${price}</td>`,
           `<td>${open_date}</td>`,
+          `<td>${openDays}</td>`,
           `<td>${open_price}</td>`,
-          `<td>${note}</td>`
         ].join('');
     
         body.innerHTML += `<tr>${rowHtml}</tr>`;
@@ -137,7 +144,6 @@
         fetchCSV(openTradesUrl),
         fetchCSV(pricesUrl)
       ]);
-      debugger
       const prices = parsePricesCSV(pricesCsv);
       populateTable(tradesCsv, prices);
     }
