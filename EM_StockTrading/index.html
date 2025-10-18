@@ -64,7 +64,7 @@
     function populateTable(trades, prices) {
       const headerRow = document.getElementById('table-header');
       const body = document.getElementById('table-body');
-      const headers = ['#', 'Stock', 'Type', 'Today %', 'Total %', 'Price', 'Open date', 'Days', 'Open price'];
+      const headers = ['#', 'Stock', 'Type', 'Today %', 'Total %', 'Days', 'Rsi', 'MA Diff','Open date', 'Price', 'Open price'];
     
       headerRow.innerHTML = headers.map(h => `<th>${h}</th>`).join('');
     
@@ -75,6 +75,8 @@
         const price = pData['price'] || 0;
         const prevClose = pData['prev_close'] || 0;
         const todayPct = pData['change_pct'] || 0;
+        const rsi = pData['RSI'] || 0;
+        const ma_diff = pData['Diff_to_MA'] || 0;
 
         const openDate = new Date(open_date);
         const today = new Date();
@@ -92,9 +94,11 @@
           `<td>${typeLink}</td>`,
           `<td>${todayPct}</td>`,
           `<td>${totalPct}</td>`,
-          `<td>${price}</td>`,
-          `<td>${open_date}</td>`,
           `<td>${openDays}</td>`,
+          `<td>${rsi}</td>`,
+          `<td>${ma_diff}</td>`,
+          `<td>${open_date}</td>`,
+          `<td>${price}</td>`,
           `<td>${open_price}</td>`,
         ].join('');
     
@@ -150,6 +154,7 @@
         fetchCSV(openTradesUrl),
         fetchCSV(pricesUrl)
       ]);
+      debugger
       const prices = parsePricesCSV(pricesCsv);
       populateTable(tradesCsv, prices);
     }
