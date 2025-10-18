@@ -5,13 +5,13 @@
   <title>Stock Screener</title>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <style>
-    /* === General Mobile-Friendly Styling === */
+    /* === General Styling === */
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      font-size: 20px;           /* larger base font */
+      font-size: 22px;          /* larger base font for tall phone */
       line-height: 1.6;
       margin: 0;
-      padding: 10px;
+      padding: 12px;
       background-color: #f9fafb;
       color: #111;
     }
@@ -20,31 +20,31 @@
     .filter-bar {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      padding: 10px 0;
+      gap: 10px;
+      padding: 12px 0;
       background: #fff;
       border-bottom: 1px solid #ddd;
     }
 
     .filter-bar label {
       font-weight: 600;
-      font-size: 18px;
+      font-size: 20px;
     }
 
     .filter-bar input,
     .filter-bar select {
-      font-size: 18px;
-      padding: 10px;
+      font-size: 20px;
+      padding: 12px;
       border-radius: 8px;
       border: 1px solid #ccc;
-      min-width: 100px;
+      min-width: 120px;
       flex: 1 1 auto;
       box-sizing: border-box;
     }
 
     /* === Scrollable Table Container === */
     .table-container {
-      max-height: 80vh;        /* scrollable height */
+      max-height: 80vh;       /* scrollable height */
       overflow-y: auto;
       border: 1px solid #ccc;
     }
@@ -57,16 +57,16 @@
     }
 
     th, td {
-      padding: 12px 10px;       /* larger padding for touch screens */
+      padding: 14px 10px;      /* larger padding for readability */
       text-align: left;
       border-bottom: 1px solid #eee;
-      font-size: 18px;           /* increase font size */
+      font-size: 20px;          /* larger font */
       white-space: nowrap;
     }
 
     th {
       background-color: #f3f4f6;
-      position: sticky;
+      position: sticky;        /* keeps header visible */
       top: 0;
       z-index: 2;
     }
@@ -75,31 +75,31 @@
       background-color: #f0f8ff;
     }
 
-    /* === Small Chart Cell === */
+    /* === Chart / small cells === */
     .chart-cell {
       width: 100px;
       height: 50px;
     }
 
-    /* === Mobile-Specific Adjustments === */
-    @media (max-width: 768px) {
+    /* === Media Query for very narrow screens if needed === */
+    @media (max-width: 1000px) {
       body {
-        font-size: 22px;          /* bigger base font on phones */
+        font-size: 24px;        /* slightly larger on tall phones */
       }
 
       th, td {
-        font-size: 20px;
-        padding: 14px 10px;
+        font-size: 22px;
+        padding: 16px 10px;
       }
 
       .filter-bar input,
       .filter-bar select {
-        font-size: 20px;
-        padding: 12px;
+        font-size: 22px;
+        padding: 14px;
       }
 
       .chart-cell {
-        width: 80px;
+        width: 90px;
         height: 50px;
       }
     }
@@ -141,7 +141,6 @@
   </div>
 
   <script>
-    alert( window.innerWidth + ' ' + window.innerHeight);
     let fullData = [];
     let currentSortCol = null;
     let sortAsc = true;
