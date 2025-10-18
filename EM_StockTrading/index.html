@@ -40,7 +40,10 @@
         result[symbol] = {
           change_pct: parseFloat(row[1]),
           prev_close: (parseInt(row[2], 10) / 100).toFixed(2),
-          price: (parseInt(row[3], 10) / 100).toFixed(2)          
+          price: (parseInt(row[3], 10) / 100).toFixed(2),
+          rsi: parseInt(row[4], 10),
+          rsi_dif: parseInt(row[5], 10),
+          ma_diff: parseFloat(row[6], 10).toFixed(1),
         };
       }
       return result;
@@ -72,12 +75,14 @@
         const row = trades[i];
         const [ticker, type, open_date, open_price] = row;
         const pData = prices[ticker] || {};
+        console.log(pData)
         const price = pData['price'] || 0;
         const prevClose = pData['prev_close'] || 0;
         const todayPct = pData['change_pct'] || 0;
-        const rsi = pData['RSI'] || 0;
-        const ma_diff = pData['Diff_to_MA'] || 0;
+        const rsi = pData['rsi'] || 0;
+        const ma_diff = pData['ma_diff'] || 0;
 
+      
         const openDate = new Date(open_date);
         const today = new Date();
         today.setHours(0, 0, 0, 0);
@@ -154,7 +159,6 @@
         fetchCSV(openTradesUrl),
         fetchCSV(pricesUrl)
       ]);
-      debugger
       const prices = parsePricesCSV(pricesCsv);
       populateTable(tradesCsv, prices);
     }
