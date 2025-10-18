@@ -25,13 +25,22 @@
 
   <div>
     <label>Filter:</label>
-    <select id="filterColumn"></select>
-    <select id="filterOp">
+    <select id="filterColumn1"></select>
+    <select id="filterOp1">
       <option value=">">&gt;</option>
       <option value="<">&lt;</option>
       <option value="=">=</option>
     </select>
-    <input type="number" id="filterValue" placeholder="Value">
+    <input type="number" id="filterValue1" placeholder="Value">
+
+    <select id="filterColumn2"></select>
+    <select id="filterOp2">
+      <option value=">">&gt;</option>
+      <option value="<">&lt;</option>
+      <option value="=">=</option>
+    </select>
+    <input type="number" id="filterValue2" placeholder="Value">
+
     <button onclick="applyFilter()">Apply</button>
     <button onclick="resetFilter()">Reset</button>
   </div>
@@ -86,32 +95,55 @@
         table.innerHTML = html;
     }
 
+  function populateFilterColumns(columns) {
+    const sel1 = document.getElementById('filterColumn1');
+    const sel2 = document.getElementById('filterColumn2');
+    const opts = ['<option value="">--ignore--</option>'].concat(columns.map(c => `<option value="${c}">${c}</option>`)).join('');
+    sel1.innerHTML = opts;
+    sel2.innerHTML = opts;
+  }
 
-    function populateFilterColumns(columns) {
-      const select = document.getElementById('filterColumn');
-      select.innerHTML = columns.map(c => `<option value="${c}">${c}</option>`).join('');
-    }
+  function applyFilter() {
+    const col1 = document.getElementById('filterColumn1').value;
+    const op1 = document.getElementById('filterOp1').value;
+    const val1 = parseFloat(document.getElementById('filterValue1').value);
 
-    function applyFilter() {
-      const col = document.getElementById('filterColumn').value;
-      const op = document.getElementById('filterOp').value;
-      const val = parseFloat(document.getElementById('filterValue').value);
-      if (isNaN(val)) return alert("Enter a valid number");
+    const col2 = document.getElementById('filterColumn2').value;
+    const op2 = document.getElementById('filterOp2').value;
+    const val2 = parseFloat(document.getElementById('filterValue2').value);
 
-      const filtered = fullData.filter(row => {
-        const cell = parseFloat(row[col]);
-        if (isNaN(cell)) return false;
-        if (op === '>') return cell > val;
-        if (op === '<') return cell < val;
-        if (op === '=') return cell === val;
-      });
+    const filtered = fullData.filter(row => {
+      let keep = true;
 
-      renderTable(filtered);
-    }
+      if (col1 && !isNaN(val1)) {
+        const cell = parseFloat(row[col1]);
+        if (isNaN(cell)) keep = false;
+        else if (op1 === '>' && !(cell > val1)) keep = false;
+        else if (op1 === '<' && !(cell < val1)) keep = false;
+        else if (op1 === '=' && !(cell === val1)) keep = false;
+      }
 
-    function resetFilter() {
-      renderTable(fullData);
-    }
+      if (col2 && !isNaN(val2)) {
+        const cell = parseFloat(row[col2]);
+        if (isNaN(cell)) keep = false;
+        else if (op2 === '>' && !(cell > val2)) keep = false;
+        else if (op2 === '<' && !(cell < val2)) keep = false;
+        else if (op2 === '=' && !(cell === val2)) keep = false;
+      }
+
+      return keep;
+    });
+
+    renderTable(filtered);
+  }
+
+  function resetFilter() {
+    document.getElementById('filterColumn1').value = '';
+    document.getElementById('filterValue1').value = '';
+    document.getElementById('filterColumn2').value = '';
+    document.getElementById('filterValue2').value = '';
+    renderTable(fullData);
+  }
 
     function sortBy(col) {
       if (currentSortCol === col) sortAsc = !sortAsc;
