@@ -71,6 +71,10 @@
       return `<a href="https://www.google.com/finance/quote/${ticker}" target="help_chart">.G.</a>`;
     }
 
+    function createGoogleNewsLink(ticker) {
+      return `<a href="https://news.google.com/search?q=${ticker}+stock&hl=en-US&gl=US&ceid=US:en" target="help_chart">.GN.</a>`;
+    }
+
     function renderTable(data) {
         const table = document.getElementById('dataTable');
         if (!data.length) return;
@@ -89,7 +93,7 @@
             if (i === 0) {
                 // Make first column (ticker) a link
                 const ticker = row[h];
-                html += `<td><a href="stock_chart.html?ticker=${encodeURIComponent(ticker)}" target="stock_chart">${ticker}</a> ${createFinvizLink(ticker)} ${createGoogleLink(ticker)}</td>`;
+                html += `<td><a href="stock_chart.html?ticker=${encodeURIComponent(ticker)}" target="stock_chart">${ticker}</a> ${createFinvizLink(ticker)} ${createGoogleLink(ticker)}  ${createGoogleNewsLink(ticker)}</td>`;
             } else {
                 html += `<td>${row[h] ?? ''}</td>`;
             }
