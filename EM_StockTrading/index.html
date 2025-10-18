@@ -5,21 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EM Stock Trade Portal</title>
   <style>
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-    th { background-color: #f2f2f2; }
-    a {margin: 5px 5px;}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10px;
+    }
+
+    .table-container {
+      max-height: 80vh;   /* scrollable area for the table */
+      overflow-y: auto;
+      border: 1px solid #ccc;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    a { margin: 5px 5px; }
   </style>
 </head>
 <body>
-  <table id="trades-table">
-    <thead>
-      <tr id="table-header"></tr>
-    </thead>
-    <tbody id="table-body"></tbody>
-  </table>
+  <div class="table-container">
+    <table id="trades-table">
+      <thead>
+        <tr id="table-header"></tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
+
   <p><a href="stock_screener.html">Stock screener</a></p>
   <div id="widget-container"></div>
+
   <script>
     const openTradesUrl = 'https://edmilinski.github.io/EM_StockTrading/EM_Open_Trades.csv';
     const pricesUrl = 'https://edmilinski.github.io/EM_StockTrading/Russell_1000_Prices.csv';
@@ -32,10 +62,6 @@
 
     function parsePricesCSV(csvData) {
       const result = {};
-
-      debugger
-
-      // skip header line
       for (let i = 1; i < csvData.length; i++) {        
         const row = csvData[i];
         const symbol = row[0];
@@ -51,11 +77,10 @@
       return result;
     }
 
-
     function populateTable(trades, prices) {
       const headerRow = document.getElementById('table-header');
       const body = document.getElementById('table-body');
-      const headers = ['#', 'Stock', 'Type', 'Today %', 'Total %', 'Days', 'Rsi', 'MA Diff','Open date', 'Price', 'Open price'];
+      const headers = ['#', 'Stock', 'Type', 'Today %', 'Total %', 'Days', 'Rsi', 'MA Diff', 'Open date', 'Price', 'Open price'];
     
       headerRow.innerHTML = headers.map(h => `<th>${h}</th>`).join('');
     
@@ -64,24 +89,19 @@
         const [ticker, type, open_date, open_price] = row;
         const pData = prices[ticker] || {};
         const price = pData['price'] || 0;
-        const prevClose = pData['prev_close'] || 0;
         const todayPct = pData['change_pct'] || 0;
         const rsi = pData['rsi'] || 0;
         const ma_diff = pData['ma_diff'] || 0;
 
-      
         const openDate = new Date(open_date);
         const today = new Date();
         today.setHours(0, 0, 0, 0);
-        const diffMs = today - openDate;
-        // Convert milliseconds to days
-        const openDays = Math.round(diffMs / (1000 * 60 * 60 * 24));        
+        const openDays = Math.round((today - openDate) / (1000 * 60 * 60 * 24));
 
         const totalPct = open_price ? ((price / parseFloat(open_price) - 1) * 100).toFixed(1) : '';
     
-        const typeLink = `<a href="https://finviz.com/quote.ashx?t=${ticker}&p=d" target="stocks">${type}</a>`;
         const rowHtml = [
-          `<td>${i}</td>`,  // row number
+          `<td>${i}</td>`,
           `<td>${createTickerLink(ticker)}<br>${createFinvizLink(ticker)} ${createGoogleLink(ticker)} ${createGoogleNewsLink(ticker)}</td>`,
           `<td>${type}</td>`,
           `<td>${todayPct}</td>`,
@@ -114,15 +134,10 @@
       return `<a href="https://news.google.com/search?q=${ticker}+stock&hl=en-US&gl=US&ceid=US:en" target="help_chart">.GN.</a>`;
     }
 
-    function create_showTradingViewWidget_Link(ticker) {
-      return `<a href="#" onclick="showTradingViewWidget('${ticker}')">${ticker}</a>`;
-    }
-    
     function showTradingViewWidget(ticker) {
       const container = document.getElementById('widget-container');
       container.innerHTML = `<div class="tradingview-widget-container"><div id="tradingview_${ticker}"></div></div>`;
     
-      // Load TradingView script if not already loaded
       if (!window.TradingView) {
         const script = document.createElement('script');
         script.src = "https://s3.tradingview.com/tv.js";

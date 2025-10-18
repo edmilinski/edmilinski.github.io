@@ -6,21 +6,38 @@
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <style>
     body { font-family: Arial, sans-serif; padding: 10px; }
-    table { border-collapse: collapse; width: 100%; margin-top: 10px; }
-    th, td { border: 1px solid #ccc; padding: 4px 8px; text-align: right; }
-    th { cursor: pointer; background: #f2f2f2; }
+
+    .table-container {
+      max-height: 80vh; /* table scroll area */
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 4px 8px;
+      text-align: right;
+    }
+
+    th {
+      cursor: pointer;
+      background: #f2f2f2;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
     input, select { margin: 4px; }
-    a {margin: 5px 5px;}
+    a { margin: 5px 5px; }
   </style>
 </head>
 <body>
-  <div>
-    <label>CSV URL:</label>
-    <input type="text" id="csvUrl" size="80"
-      value="https://raw.githubusercontent.com/edmilinski/edmilinski.github.io/main/EM_StockTrading/Russell_1000_Prices.csv">
-    <button onclick="loadCsv()">Load</button>
-  </div>
-
   <div>
     <label>Filter:</label>
     <select id="filterColumn1"></select>
@@ -43,7 +60,16 @@
     <button onclick="resetFilter()">Reset</button>
   </div>
 
-  <table id="dataTable"></table>
+  <div class="table-container">
+    <table id="dataTable"></table>
+  </div>
+
+  <div>
+    <label>CSV URL:</label>
+    <input type="text" id="csvUrl" size="80"
+      value="https://raw.githubusercontent.com/edmilinski/edmilinski.github.io/main/EM_StockTrading/Russell_1000_Prices.csv">
+    <button onclick="loadCsv()">Load</button>
+  </div>
 
   <script>
     let fullData = [];
@@ -76,84 +102,82 @@
     }
 
     function renderTable(data) {
-        const table = document.getElementById('dataTable');
-        if (!data.length) return;
+      const table = document.getElementById('dataTable');
+      if (!data.length) return;
 
-        // const headers = Object.keys(data[0]);
-        const headers = ['symbol', 'change_pct', 'MA_diff', 'RSI', 'RSI_delta', 'price'];
-        let html = '<thead><tr>';
-        headers.forEach(h => {
-            html += `<th onclick="sortBy('${h}')">${h}</th>`;
+      const headers = ['symbol', 'change_pct', 'MA_diff', 'RSI', 'RSI_delta', 'price'];
+      let html = '<thead><tr>';
+      headers.forEach(h => {
+        html += `<th onclick="sortBy('${h}')">${h}</th>`;
+      });
+      html += '</tr></thead><tbody>';
+
+      data.forEach(row => {
+        html += '<tr>';
+        headers.forEach((h, i) => {
+          if (i === 0) {
+            const ticker = row[h];
+            html += `<td><a href="stock_chart.html?ticker=${encodeURIComponent(ticker)}" target="stock_chart">${ticker}</a> ${createFinvizLink(ticker)} ${createGoogleLink(ticker)} ${createGoogleNewsLink(ticker)}</td>`;
+          } else {
+            html += `<td>${row[h] ?? ''}</td>`;
+          }
         });
-        html += '</tr></thead><tbody>';
+        html += '</tr>';
+      });
 
-        data.forEach(row => {
-            html += '<tr>';
-            headers.forEach((h, i) => {
-            if (i === 0) {
-                // Make first column (ticker) a link
-                const ticker = row[h];
-                html += `<td><a href="stock_chart.html?ticker=${encodeURIComponent(ticker)}" target="stock_chart">${ticker}</a> ${createFinvizLink(ticker)} ${createGoogleLink(ticker)}  ${createGoogleNewsLink(ticker)}</td>`;
-            } else {
-                html += `<td>${row[h] ?? ''}</td>`;
-            }
-            });
-            html += '</tr>';
-        });
-
-        html += '</tbody>';
-        table.innerHTML = html;
+      html += '</tbody>';
+      table.innerHTML = html;
     }
 
-  function populateFilterColumns(columns) {
-    const sel1 = document.getElementById('filterColumn1');
-    const sel2 = document.getElementById('filterColumn2');
-    const opts = ['<option value="">--ignore--</option>'].concat(columns.map(c => `<option value="${c}">${c}</option>`)).join('');
-    sel1.innerHTML = opts;
-    sel2.innerHTML = opts;
-  }
+    function populateFilterColumns(columns) {
+      const sel1 = document.getElementById('filterColumn1');
+      const sel2 = document.getElementById('filterColumn2');
+      const opts = ['<option value="">--ignore--</option>'].concat(columns.map(c => `<option value="${c}">${c}</option>`)).join('');
+      sel1.innerHTML = opts;
+      sel2.innerHTML = opts;
+    }
 
-  function applyFilter() {
-    const col1 = document.getElementById('filterColumn1').value;
-    const op1 = document.getElementById('filterOp1').value;
-    const val1 = parseFloat(document.getElementById('filterValue1').value);
+    function applyFilter() {
+      const col1 = document.getElementById('filterColumn1').value;
+      const op1 = document.getElementById('filterOp1').value;
+      const val1 = parseFloat(document.getElementById('filterValue1').value);
 
-    const col2 = document.getElementById('filterColumn2').value;
-    const op2 = document.getElementById('filterOp2').value;
-    const val2 = parseFloat(document.getElementById('filterValue2').value);
+      const col2 = document.getElementById('filterColumn2').value;
+      const op2 = document.getElementById('filterOp2').value;
+      const val2 = parseFloat(document.getElementById('filterValue2').value);
 
-    const filtered = fullData.filter(row => {
-      let keep = true;
+      const filtered = fullData.filter(row => {
+        let keep = true;
 
-      if (col1 && !isNaN(val1)) {
-        const cell = parseFloat(row[col1]);
-        if (isNaN(cell)) keep = false;
-        else if (op1 === '>' && !(cell > val1)) keep = false;
-        else if (op1 === '<' && !(cell < val1)) keep = false;
-        else if (op1 === '=' && !(cell === val1)) keep = false;
-      }
+        if (col1 && !isNaN(val1)) {
+          const cell = parseFloat(row[col1]);
+          if (isNaN(cell)) keep = false;
+          else if (op1 === '>' && !(cell > val1)) keep = false;
+          else if (op1 === '<' && !(cell < val1)) keep = false;
+          else if (op1 === '=' && !(cell === val1)) keep = false;
+        }
 
-      if (col2 && !isNaN(val2)) {
-        const cell = parseFloat(row[col2]);
-        if (isNaN(cell)) keep = false;
-        else if (op2 === '>' && !(cell > val2)) keep = false;
-        else if (op2 === '<' && !(cell < val2)) keep = false;
-        else if (op2 === '=' && !(cell === val2)) keep = false;
-      }
+        if (col2 && !isNaN(val2)) {
+          const cell = parseFloat(row[col2]);
+          if (isNaN(cell)) keep = false;
+          else if (op2 === '>' && !(cell > val2)) keep = false;
+          else if (op2 === '<' && !(cell < val2)) keep = false;
+          else if (op2 === '=' && !(cell === val2)) keep = false;
+        }
 
-      return keep;
-    });
+        return keep;
+      });
 
-    renderTable(filtered);
-  }
+      renderTable(filtered);
+    }
 
-  function resetFilter() {
-    document.getElementById('filterColumn1').value = '';
-    document.getElementById('filterValue1').value = '';
-    document.getElementById('filterColumn2').value = '';
-    document.getElementById('filterValue2').value = '';
-    renderTable(fullData);
-  }
+    function resetFilter() {
+      document.getElementById('filterColumn1').value = '';
+      document.getElementById('filterValue1').value = '';
+      document.getElementById('filterColumn2').value = '';
+      document.getElementById('filterValue2').value = '';
+      renderTable(fullData);
+    }
 
     function sortBy(col) {
       if (currentSortCol === col) sortAsc = !sortAsc;
@@ -168,6 +192,7 @@
       });
       renderTable(fullData);
     }
+
     loadCsv();
   </script>
 
