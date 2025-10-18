@@ -18,6 +18,7 @@
     </thead>
     <tbody id="table-body"></tbody>
   </table>
+  <p><a href="stock_screener.html">Stock screener</a></p>
   <div id="widget-container"></div>
   <script>
     const openTradesUrl = 'https://edmilinski.github.io/EM_StockTrading/EM_Open_Trades.csv';
@@ -102,6 +103,10 @@
     }
 
     function createTickerLink(ticker) {
+      return `<a href="stock_chart.html?ticker=${encodeURIComponent(ticker)}" target="stock_chart">${ticker}</a>`;
+    }
+
+    function create_showTradingViewWidget_Link(ticker) {
       return `<a href="#" onclick="showTradingViewWidget('${ticker}')">${ticker}</a>`;
     }
     
@@ -136,7 +141,7 @@
         "hide_side_toolbar": false,
         "allow_symbol_change": true,
         "container_id": `tradingview_${ticker}`,
-        "studies": ["RSI@tv-basicstudies"], 
+        "studies": ["RSI@tv-basicstudies", "MASimple@tv-basicstudies"], 
       });
     }
     
