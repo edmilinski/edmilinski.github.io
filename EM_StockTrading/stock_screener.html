@@ -60,7 +60,8 @@
         const table = document.getElementById('dataTable');
         if (!data.length) return;
 
-        const headers = Object.keys(data[0]);
+        // const headers = Object.keys(data[0]);
+        const headers = ['symbol', 'change_pct', 'MA_diff', 'RSI', 'RSI_delta', 'price'];
         let html = '<thead><tr>';
         headers.forEach(h => {
             html += `<th onclick="sortBy('${h}')">${h}</th>`;
