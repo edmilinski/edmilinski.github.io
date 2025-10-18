@@ -13,9 +13,6 @@
   </style>
 </head>
 <body>
-
-  <h2>Stock CSV Viewer</h2>
-
   <div>
     <label>CSV URL:</label>
     <input type="text" id="csvUrl" size="80"
@@ -27,19 +24,19 @@
     <label>Filter:</label>
     <select id="filterColumn1"></select>
     <select id="filterOp1">
-      <option value=">">&gt;</option>
-      <option value="<">&lt;</option>
-      <option value="=">=</option>
+      <option value=">">greater than</option>
+      <option value="<">less than</option>
+      <option value="=">equal</option>
     </select>
-    <input type="number" id="filterValue1" placeholder="Value">
+    <input type="number" id="filterValue1" placeholder="Value" style="width: 50px;">
 
     <select id="filterColumn2"></select>
     <select id="filterOp2">
-      <option value=">">&gt;</option>
-      <option value="<">&lt;</option>
-      <option value="=">=</option>
+      <option value=">">greater than</option>
+      <option value="<">less than</option>
+      <option value="=">equal</option>
     </select>
-    <input type="number" id="filterValue2" placeholder="Value">
+    <input type="number" id="filterValue2" placeholder="Value" style="width: 50px;">
 
     <button onclick="applyFilter()">Apply</button>
     <button onclick="resetFilter()">Reset</button>
