@@ -8,6 +8,7 @@
     table { border-collapse: collapse; width: 100%; }
     th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
     th { background-color: #f2f2f2; }
+    a {margin: 5px 5px;}
   </style>
 </head>
 <body>
@@ -81,8 +82,8 @@
         const typeLink = `<a href="https://finviz.com/quote.ashx?t=${ticker}&p=d" target="stocks">${type}</a>`;
         const rowHtml = [
           `<td>${i}</td>`,  // row number
-          `<td>${createTickerLink(ticker)} ${createFinvizLink(ticker)} ${createGoogleLink(ticker)}</td>`,
-          `<td>${typeLink}</td>`,
+          `<td>${createTickerLink(ticker)}<br>${createFinvizLink(ticker)} ${createGoogleLink(ticker)} ${createGoogleNewsLink(ticker)}</td>`,
+          `<td>${type}</td>`,
           `<td>${todayPct}</td>`,
           `<td>${totalPct}</td>`,
           `<td>${openDays}</td>`,
@@ -102,14 +103,16 @@
     }
 
     function createFinvizLink(ticker) {
-      return `<a href="https://finviz.com/quote.ashx?p=d&t=${ticker}" target="help_chart">_F_</a>`;
+      return `<a href="https://finviz.com/quote.ashx?p=d&t=${ticker}" target="help_chart">.FV.</a>`;
     }
 
     function createGoogleLink(ticker) {
-      return `<a href="https://www.google.com/finance/quote/${ticker}" target="help_chart">_G_</a>`;
+      return `<a href="https://www.google.com/finance/quote/${ticker}" target="help_chart">.G.</a>`;
     }
 
-    https://finviz.com/quote.ashx?p=d&t={ticker}
+    function createGoogleNewsLink(ticker) {
+      return `<a href="https://news.google.com/search?q=${ticker}+stock&hl=en-US&gl=US&ceid=US:en" target="help_chart">.GN.</a>`;
+    }
 
     function create_showTradingViewWidget_Link(ticker) {
       return `<a href="#" onclick="showTradingViewWidget('${ticker}')">${ticker}</a>`;

@@ -10,6 +10,7 @@
     th, td { border: 1px solid #ccc; padding: 4px 8px; text-align: right; }
     th { cursor: pointer; background: #f2f2f2; }
     input, select { margin: 4px; }
+    a {margin: 5px 5px;}
   </style>
 </head>
 <body>
@@ -24,16 +25,16 @@
     <label>Filter:</label>
     <select id="filterColumn1"></select>
     <select id="filterOp1">
-      <option value=">">greater than</option>
-      <option value="<">less than</option>
+      <option value=">">greater</option>
+      <option value="<">less</option>
       <option value="=">equal</option>
     </select>
     <input type="number" id="filterValue1" placeholder="Value" style="width: 50px;">
 
     <select id="filterColumn2"></select>
     <select id="filterOp2">
-      <option value=">">greater than</option>
-      <option value="<">less than</option>
+      <option value=">">greater</option>
+      <option value="<">less</option>
       <option value="=">equal</option>
     </select>
     <input type="number" id="filterValue2" placeholder="Value" style="width: 50px;">
@@ -63,11 +64,11 @@
     }
 
     function createFinvizLink(ticker) {
-      return `<a href="https://finviz.com/quote.ashx?p=d&t=${ticker}" target="help_chart">_F_</a>`;
+      return `<a href="https://finviz.com/quote.ashx?p=d&t=${ticker}" target="help_chart">.FV.</a>`;
     }
 
     function createGoogleLink(ticker) {
-      return `<a href="https://www.google.com/finance/quote/${ticker}" target="help_chart">_G_</a>`;
+      return `<a href="https://www.google.com/finance/quote/${ticker}" target="help_chart">.G.</a>`;
     }
 
     function renderTable(data) {
