@@ -65,6 +65,14 @@
       });
     }
 
+    function createFinvizLink(ticker) {
+      return `<a href="https://finviz.com/quote.ashx?p=d&t=${ticker}" target="help_chart">_F_</a>`;
+    }
+
+    function createGoogleLink(ticker) {
+      return `<a href="https://www.google.com/finance/quote/${ticker}" target="help_chart">_G_</a>`;
+    }
+
     function renderTable(data) {
         const table = document.getElementById('dataTable');
         if (!data.length) return;
@@ -83,7 +91,7 @@
             if (i === 0) {
                 // Make first column (ticker) a link
                 const ticker = row[h];
-                html += `<td><a href="stock_chart.html?ticker=${encodeURIComponent(ticker)}" target="stock_chart">${ticker}</a></td>`;
+                html += `<td><a href="stock_chart.html?ticker=${encodeURIComponent(ticker)}" target="stock_chart">${ticker}</a> ${createFinvizLink(ticker)} ${createGoogleLink(ticker)}</td>`;
             } else {
                 html += `<td>${row[h] ?? ''}</td>`;
             }

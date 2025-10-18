@@ -82,7 +82,7 @@
         const typeLink = `<a href="https://finviz.com/quote.ashx?t=${ticker}&p=d" target="stocks">${type}</a>`;
         const rowHtml = [
           `<td>${i}</td>`,  // row number
-          `<td>${createTickerLink(ticker)}</td>`,
+          `<td>${createTickerLink(ticker)} ${createFinvizLink(ticker)} ${createGoogleLink(ticker)}</td>`,
           `<td>${typeLink}</td>`,
           `<td>${todayPct}</td>`,
           `<td>${totalPct}</td>`,
@@ -101,6 +101,16 @@
     function createTickerLink(ticker) {
       return `<a href="stock_chart.html?ticker=${encodeURIComponent(ticker)}" target="stock_chart">${ticker}</a>`;
     }
+
+    function createFinvizLink(ticker) {
+      return `<a href="https://finviz.com/quote.ashx?p=d&t=${ticker}" target="help_chart">_F_</a>`;
+    }
+
+    function createGoogleLink(ticker) {
+      return `<a href="https://www.google.com/finance/quote/${ticker}" target="help_chart">_G_</a>`;
+    }
+
+    https://finviz.com/quote.ashx?p=d&t={ticker}
 
     function create_showTradingViewWidget_Link(ticker) {
       return `<a href="#" onclick="showTradingViewWidget('${ticker}')">${ticker}</a>`;
