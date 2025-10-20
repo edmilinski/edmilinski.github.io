@@ -1,7 +1,6 @@
 ticker,type,open_date,open_price,pair_ticker,note
 TRGP,Long,2025-10-17,148.15,,at lower band. low rsi. low sector rsi
 CUZ,Long,2025-10-10,27.28,,RSI < 30. above resistance
-IR,Long,2025-10-10,79.25,,higher lows
 IXG,Long,2025-10-06,116.49,,long term invest in ETF ? did not check RSI or anything
 XLC,Long,2025-09-24,118.09,,
 IAI,Long,2025-07-28,174.85,,
