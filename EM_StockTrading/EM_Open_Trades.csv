@@ -1,7 +1,6 @@
 ticker,type,open_date,open_price,pair_ticker,note
 MAN,Long,2025-10-20,34.09,,afte er drop. rsi below sector rsi. hold till both rsi equal
 IBKR,Long,2025-10-20,67.0,,after er. at lower band. low sector rsi
-FHN,Long,2025-10-20,20.46,,after er 10% drop
 OZK,Long,2025-10-17,46.33,,after er drop. low rsi. low sect rsi. below band
 TRGP,Long,2025-10-17,148.15,,at lower band. low rsi. low sector rsi
 CUZ,Long,2025-10-10,27.28,,RSI < 30. above resistance. should exit after 3 days. idea not working!
