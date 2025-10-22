@@ -1,5 +1,4 @@
 ticker,type,open_date,open_price,pair_ticker,note
-LOAR,Long,2025-10-21,81.83,,mistake. chart was at diff date !
 MAN,Long,2025-10-20,34.09,,afte er drop. rsi below sector rsi. hold till both rsi equal
 IBKR,Long,2025-10-20,67.0,,after er. at lower band. low sector rsi
 OZK,Long,2025-10-17,46.33,,after er drop. low rsi. low sect rsi. below band
