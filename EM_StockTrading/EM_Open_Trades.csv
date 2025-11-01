@@ -1,5 +1,5 @@
 ticker,type,open_date,open_price,note
-DOC,Long,2025-10-30 16:00,17.75,
+DOC,Long,2025-10-30 16:00,17.75,test
 CMG,Long,2025-10-30 09:30,32.97,after ER 20% drop. started reversing
 FLS,Short,2025-10-30 09:30,67.83,after 30% gain on ER
 RCL,Long,2025-10-30 09:30,284.43,below band.
