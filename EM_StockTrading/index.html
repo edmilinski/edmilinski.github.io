@@ -53,6 +53,7 @@
   <script>
     const openTradesUrl = 'https://edmilinski.github.io/EM_StockTrading/EM_Open_Trades.csv';
     const pricesUrl = 'https://edmilinski.github.io/EM_StockTrading/Russell_1000_Prices.csv';
+    const prices_columns = ['symbol','change_pct','prev_close','price','mas_curr','mas_prev','mal_curr','mal_prev','maxl_curr','maxl_prev','rsi'];
 
     async function fetchCSV(url) {
       const res = await fetch(url);
@@ -62,16 +63,15 @@
 
     function parsePricesCSV(csvData) {
       const result = {};
-      for (let i = 1; i < csvData.length; i++) {        
+      for (let i = 1; i < csvData.length; i++) {
         const row = csvData[i];
         const symbol = row[0];
+        ma_diff = 100 * (parseFloat(row[3])/ parseFloat(row[4]) - 1)
         result[symbol] = {
           change_pct: parseFloat(row[1]),
-          prev_close: (parseInt(row[2], 10) / 100).toFixed(2),
           price: (parseInt(row[3], 10) / 100).toFixed(2),
-          ma_diff: parseFloat(row[4], 10).toFixed(1),
-          rsi: parseInt(row[5], 10),
-          rsi_dif: parseInt(row[6], 10),
+          ma_diff: ma_diff.toFixed(1),
+          rsi: parseInt(row[10], 10),
         };
       }
       return result;

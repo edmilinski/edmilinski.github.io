@@ -105,7 +105,7 @@
       const table = document.getElementById('dataTable');
       if (!data.length) return;
 
-      const headers = ['symbol', 'change_pct', 'MA_diff', 'RSI', 'RSI_delta', 'price'];
+      const headers = ['symbol', 'change_pct', 'rsi', 'ma_diff', 'price'];
       let html = '<thead><tr>';
       headers.forEach(h => {
         html += `<th onclick="sortBy('${h}')">${h}</th>`;
@@ -115,9 +115,19 @@
       data.forEach(row => {
         html += '<tr>';
         headers.forEach((h, i) => {
-          if (i === 0) {
+          if(h == 'symbol') {
             const ticker = row[h];
             html += `<td><a href="stock_chart.html?ticker=${encodeURIComponent(ticker)}" target="stock_chart">${ticker}</a> ${createFinvizLink(ticker)} ${createGoogleLink(ticker)} ${createGoogleNewsLink(ticker)}</td>`;
+          } else if(h == 'price') {
+            price = ''
+            if(row['price'])
+              price = (parseInt(row['price'], 10) / 100).toFixed(2),
+            html += `<td>${price}</td>`;
+          } else if(h == 'ma_diff') {
+            ma_diff = ''
+            if(row['price'])
+              ma_diff = (100 * (parseFloat(row['price'])/parseFloat(row['mas_curr']) - 1)).toFixed(1)
+            html += `<td>${ma_diff}</td>`;
           } else {
             html += `<td>${row[h] ?? ''}</td>`;
           }
