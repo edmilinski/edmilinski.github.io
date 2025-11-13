@@ -47,7 +47,7 @@
     </table>
   </div>
 
-  <p><a href="stock_screener.html">Stock screener</a></p>
+  <p><a href="stock_screener.html">Stock screener</a>&nbsp;&nbsp;&nbsp;&nbsp;<label>NY data time:</label> <span id="data_time"></span></p>
   <div id="widget-container"></div>
 
   <script>
@@ -173,6 +173,10 @@
         fetchCSV(openTradesUrl),
         fetchCSV(pricesUrl)
       ]);
+
+      data_time = pricesCsv[0][11]
+      document.getElementById('data_time').innerHTML = data_time
+
       const prices = parsePricesCSV(pricesCsv);
       populateTable(tradesCsv, prices);
     }
