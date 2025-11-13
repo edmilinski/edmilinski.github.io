@@ -80,7 +80,7 @@
     function populateTable(trades, prices) {
       const headerRow = document.getElementById('table-header');
       const body = document.getElementById('table-body');
-      const headers = ['#', 'Stock', 'Type', 'Today %', 'Total %', 'Days', 'Rsi', 'MA Diff', 'Open date', 'Price', 'Open price'];
+      const headers = ['#', 'Stock', 'Type', 'Today %', 'Total %', 'Rsi', 'MA Diff', 'Days', 'Open date', 'Price', 'Open price'];
     
       headerRow.innerHTML = headers.map(h => `<th>${h}</th>`).join('');
     
@@ -106,9 +106,9 @@
           `<td>${type}</td>`,
           `<td>${todayPct}</td>`,
           `<td>${totalPct}</td>`,
-          `<td>${openDays}</td>`,
           `<td>${rsi}</td>`,
           `<td>${ma_diff}</td>`,
+          `<td>${openDays}</td>`,
           `<td>${open_date}</td>`,
           `<td>${price}</td>`,
           `<td>${open_price}</td>`,
