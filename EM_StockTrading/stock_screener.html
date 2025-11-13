@@ -58,6 +58,7 @@
 
     <button onclick="applyFilter()">Apply</button>
     <button onclick="resetFilter()">Reset</button>
+    <label>Data time:</label> <label id="data_time"></label>
   </div>
 
   <div class="table-container">
@@ -73,6 +74,7 @@
 
   <script>
     let fullData = [];
+    let data_time = ''
     let currentSortCol = null;
     let sortAsc = true;
 
@@ -82,9 +84,15 @@
         download: true,
         header: true,
         complete: (results) => {
+          data_time = results.meta.fields[11]
+          document.getElementById('data_time').innerHTML = data_time
+
           fullData = results.data.filter(row => row.symbol); // remove empty
+          fullData.forEach(row => {
+            row.ma_diff = (100 * (parseFloat(row.price) / parseFloat(row.mas_curr) - 1)).toFixed(1);
+          });
           renderTable(fullData);
-          populateFilterColumns(Object.keys(fullData[0]));
+          populateFilterColumns();
         }
       });
     }
@@ -123,11 +131,6 @@
             if(row['price'])
               price = (parseInt(row['price'], 10) / 100).toFixed(2),
             html += `<td>${price}</td>`;
-          } else if(h == 'ma_diff') {
-            ma_diff = ''
-            if(row['price'])
-              ma_diff = (100 * (parseFloat(row['price'])/parseFloat(row['mas_curr']) - 1)).toFixed(1)
-            html += `<td>${ma_diff}</td>`;
           } else {
             html += `<td>${row[h] ?? ''}</td>`;
           }
@@ -142,6 +145,7 @@
     function populateFilterColumns(columns) {
       const sel1 = document.getElementById('filterColumn1');
       const sel2 = document.getElementById('filterColumn2');
+      columns = ['symbol', 'change_pct', 'rsi', 'ma_diff']
       const opts = ['<option value="">--ignore--</option>'].concat(columns.map(c => `<option value="${c}">${c}</option>`)).join('');
       sel1.innerHTML = opts;
       sel2.innerHTML = opts;
