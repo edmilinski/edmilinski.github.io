@@ -1,4 +1,5 @@
 ticker,type,open_date,open_price,note
+SOXL,Long,2025-11-13 16:00,38.509,
 XLK,Long,2025-11-10 16:00,295.46,
 SPY,Long,2025-11-10 16:00,681.63,
 META,Long,2025-11-10 16:00,633.74,
