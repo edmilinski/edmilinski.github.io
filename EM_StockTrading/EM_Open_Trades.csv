@@ -1,4 +1,5 @@
 ticker,type,open_date,open_price,note
+AFG,Long,2025-12-04 09:30,132.82,
 CAG,Long,2025-12-03 09:30,17.36,RSI-10 sect diff
 PKG,Long,2025-12-03 09:30,194.0,RSI-10 sect diff
 BBY,Long,2025-12-02 16:00,74.53,RSI 10 diff to sector
