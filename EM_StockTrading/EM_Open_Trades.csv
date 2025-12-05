@@ -1,4 +1,7 @@
 ticker,type,open_date,open_price,note
+AAON,Long,2025-12-05 09:30,88.63,
+W,Long,2025-12-05 09:30,95.42,RSI-10 diff to sector
+DINO,Long,2025-12-05 09:30,50.59,RSI-10 diff to sector
 AFG,Long,2025-12-04 09:30,132.82,
 CAG,Long,2025-12-03 09:30,17.36,RSI-10 sect diff
 PKG,Long,2025-12-03 09:30,194.0,RSI-10 sect diff
