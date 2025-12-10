@@ -1,8 +1,5 @@
 ticker,type,open_date,open_price,note
-STZ,Short,2025-12-08 09:30,141.615,
-EL,Short,2025-12-08 09:30,103.53,
 VRTX,Short,2025-12-05 09:30,455.33,RSI-10 diff to sect
-AAON,Long,2025-12-05 09:30,88.63,
 W,Long,2025-12-05 09:30,95.42,RSI-10 diff to sector
 DINO,Long,2025-12-05 09:30,50.59,RSI-10 diff to sector
 AFG,Long,2025-12-04 09:30,132.82,
