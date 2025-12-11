@@ -1,4 +1,6 @@
 ticker,type,open_date,open_price,note
+UBER,Long,2025-12-11 09:30,85.655,RSI 10 diff to sector
+ORLY,Long,2025-12-11 09:30,93.8,RSI 10 diff to sector
 BBY,Long,2025-12-02 16:00,74.53,RSI 10 diff to sector
 CDX,Long,2025-07-22 16:00,22.95,
 BKLN,Long,2025-07-11 16:00,20.94,
