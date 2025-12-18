@@ -1,4 +1,7 @@
 ticker,type,open_date,open_price,note
+KDP,Long,2025-12-18 09:30,28.18,
+DAR,Long,2025-12-18 09:30,34.84,
+DAR,Long,2025-12-18 09:30,34.75,
 ED,Short,2025-12-16 09:30,99.01,
 ORLY,Long,2025-12-11 16:00,93.8,RSI 10 diff to sector
 BBY,Long,2025-12-02 16:00,74.53,RSI 10 diff to sector
