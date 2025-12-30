@@ -1,5 +1,4 @@
 ticker,type,open_date,open_price,note
-CFG,Long,2025-12-29 12:00,59.19,below RSI correl set
 DKS,Long,2025-12-19 12:00,203.6,
 ORLY,Long,2025-12-11 16:00,93.8,RSI 10 diff to sector
 CDX,Long,2025-07-22 16:00,22.95,
