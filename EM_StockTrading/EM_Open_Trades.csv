@@ -1,4 +1,6 @@
 ticker,type,open_date,open_price,note
+VNOM,Long,2026-01-05 13:00,36.74,
+RYAN,Short,2026-01-05 13:00,52.42,ma diff above correl bunch. daily
 POOL,Short,2026-01-05 13:00,237.15,ma diff above corel bunch. daily
 SOXS,Long,2026-01-05 13:00,2.64,
 ALGM,Short,2026-01-05 13:00,28.33,
