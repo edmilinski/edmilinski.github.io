@@ -1,5 +1,4 @@
 ticker,type,open_date,open_price,note
-WDAY,Long,2026-01-02 13:30,203.5,low RSI
 DKS,Long,2025-12-19 12:00,203.6,
 CDX,Long,2025-07-22 16:00,22.95,
 BKLN,Long,2025-07-11 16:00,20.94,
