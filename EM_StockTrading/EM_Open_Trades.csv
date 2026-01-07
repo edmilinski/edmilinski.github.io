@@ -1,5 +1,4 @@
 ticker,type,open_date,open_price,note
 VNOM,Long,2026-01-05 13:00,36.74,ma diff below correl bunch
-POOL,Short,2026-01-05 13:00,237.15,ma diff above corel bunch. daily
 CDX,Long,2025-07-22 16:00,22.95,
 BKLN,Long,2025-07-11 16:00,20.94,
