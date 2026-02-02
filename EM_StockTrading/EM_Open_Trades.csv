@@ -1,8 +1,6 @@
 ticker,type,open_date,open_price,note
 HUN,Long,2026-01-29 14:00,11.135,stoch diff to sector
-NXST,Long,2026-01-29 13:30,208.4,stoch diff to sector
 ROKU,Long,2026-01-29 13:30,99.9,stoch diff to sector
-DJT,Long,2026-01-29 13:30,13.6,stoch diff to sector
 BRKR,Long,2026-01-27 14:00,48.24,low stoch both..
 CDX,Long,2025-07-22 16:00,22.95,
 BKLN,Long,2025-07-11 16:00,20.94,
