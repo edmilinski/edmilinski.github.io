@@ -1,7 +1,7 @@
 ticker,type,open_date,open_price,note
 DLTR,Long,2026-02-04 14:30,121.71,MRSI diff to sect low. MRSI sect sum low
 MKC,Long,2026-02-03 14:00,63.1,low mrsi tick-sect. low rel str
-SPY,Long,2026-02-03 14:00,687.0,dropped today 1.2%
+SPY,Long,2026-02-03 14:00,683.8,dropped today 1.2%
 ROKU,Long,2026-01-29 13:30,99.9,stoch diff to sector
 CDX,Long,2025-07-22 16:00,22.95,
 BKLN,Long,2025-07-11 16:00,20.94,
