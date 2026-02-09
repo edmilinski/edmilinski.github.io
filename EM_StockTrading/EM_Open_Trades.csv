@@ -1,4 +1,5 @@
 ticker,type,open_date,open_price,note
+ESTC,Long,2026-02-09 14:30,61.2,
 ACN,Long,2026-02-09 14:30,238.0,low mrsi t+s . low rel str t+s
 BSY,Long,2026-02-09 14:30,34.19,low mrsi t+s . low rel-str t+s rising
 CDX,Long,2025-07-22 16:00,22.95,
