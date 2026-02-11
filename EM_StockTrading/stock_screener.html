@@ -84,7 +84,7 @@
         download: true,
         header: true,
         complete: (results) => {
-          data_time = results.meta.fields[11]
+          data_time = results.meta.fields[12]
           document.getElementById('data_time').innerHTML = data_time
 
           fullData = results.data.filter(row => row.symbol); // remove empty
