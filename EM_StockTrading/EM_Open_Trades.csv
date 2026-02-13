@@ -1,4 +1,5 @@
 ticker,type,open_date,open_price,note
+SPY,Long,2026-02-12 16:00,681.43,after 1% drop
 BSY,Long,2026-02-09 14:30,34.19,low mrsi t+s . low rel-str t+s rising
 CDX,Long,2025-07-22 16:00,22.95,
 BKLN,Long,2025-07-11 16:00,20.94,
