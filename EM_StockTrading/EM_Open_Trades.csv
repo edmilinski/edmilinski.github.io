@@ -1,4 +1,8 @@
 ticker,type,open_date,open_price,note
+LBTYA,Short,2026-02-19 13:00,12.26,large rel-strength diff t-s
+UGI,Long,2026-02-19 13:00,38.38,high rel strength diff t-s
+FLO,Long,2026-02-19 13:00,9.97,high rel strength diff t-s
+VMC,Long,2026-02-19 13:00,301.2,rel strength diff high t-s
 SPY,Long,2026-02-12 16:00,681.43,after 1% drop
 BSY,Long,2026-02-09 14:30,34.19,low mrsi t+s . low rel-str t+s rising
 CDX,Long,2025-07-22 16:00,22.95,
