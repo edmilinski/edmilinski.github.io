@@ -113,7 +113,7 @@
       const table = document.getElementById('dataTable');
       if (!data.length) return;
 
-      const headers = ['symbol', 'change_pct', 'rsi', 'ma_diff', 'price'];
+      const headers = ['symbol', 'change_pct', 'rsi', 'stoch', 'ma_diff', 'price'];
       let html = '<thead><tr>';
       headers.forEach(h => {
         html += `<th onclick="sortBy('${h}')">${h}</th>`;
