@@ -52,8 +52,8 @@
 
   <script>
     const openTradesUrl = 'https://edmilinski.github.io/EM_StockTrading/EM_Open_Trades.csv';
-    const pricesUrl = 'https://edmilinski.github.io/EM_StockTrading/Russell_1000_Prices.csv';
-    const prices_columns = ['symbol','change_pct','prev_close','price','mas_curr','mas_prev','mal_curr','mal_prev','maxl_curr','maxl_prev','rsi'];
+    const indicatorsUrl = 'https://edmilinski.pythonanywhere.com/data/Russell_1000_Latest_Indicators.csv';  
+    //const indicatorsUrl = 'Russell_1000_Latest_Indicators.csv';
 
     async function fetchCSV(url) {
       const res = await fetch(url);
@@ -66,12 +66,14 @@
       for (let i = 1; i < csvData.length; i++) {
         const row = csvData[i];
         const symbol = row[0];
-        ma_diff = 100 * (parseFloat(row[3])/ parseFloat(row[4]) - 1)
         result[symbol] = {
-          change_pct: parseFloat(row[1]),
-          price: (parseInt(row[3], 10) / 100).toFixed(2),
-          ma_diff: ma_diff.toFixed(1),
-          rsi: parseInt(row[10], 10),
+          price: (parseInt(row[1], 10) / 100).toFixed(2),
+          chg_1d: parseFloat(row[2]),
+          chg_30: parseFloat(row[3]),
+          rsi_1d: parseInt(row[4], 10),
+          rsi_30: parseInt(row[5], 10),
+          stoch_1d: parseInt(row[6], 10),
+          stoch_30: parseInt(row[7], 10),
         };
       }
       return result;
@@ -80,7 +82,7 @@
     function populateTable(trades, prices) {
       const headerRow = document.getElementById('table-header');
       const body = document.getElementById('table-body');
-      const headers = ['#', 'Stock', 'Type', 'Today %', 'Total %', 'Rsi', 'MA Diff', 'Days', 'Open date', 'Price', 'Open price'];
+      const headers = ['#', 'Stock', 'Type', 'Today %', 'Total %', 'Rsi_1d', 'Rsi_30', 'Stoch_1d', 'Stoch_30', 'Days', 'Open date', 'Price', 'Open price'];
     
       headerRow.innerHTML = headers.map(h => `<th>${h}</th>`).join('');
     
@@ -89,9 +91,11 @@
         const [ticker, type, open_date, open_price] = row;
         const pData = prices[ticker] || {};
         const price = pData['price'] || 0;
-        const todayPct = pData['change_pct'] || 0;
-        const rsi = pData['rsi'] || 0;
-        const ma_diff = pData['ma_diff'] || 0;
+        const todayPct = pData['chg_1d'] || 0;
+        const rsi_1d = pData['rsi_1d'] || 0;
+        const rsi_30 = pData['rsi_30'] || 0;
+        const stoch_1d = pData['stoch_1d'] || 0;
+        const stoch_30 = pData['stoch_30'] || 0;
 
         const openDate = new Date(open_date);
         const today = new Date();
@@ -106,8 +110,10 @@
           `<td>${type}</td>`,
           `<td>${todayPct}</td>`,
           `<td>${totalPct}</td>`,
-          `<td>${rsi}</td>`,
-          `<td>${ma_diff}</td>`,
+          `<td>${rsi_1d}</td>`,
+          `<td>${rsi_30}</td>`,
+          `<td>${stoch_1d}</td>`,
+          `<td>${stoch_30}</td>`,
           `<td>${openDays}</td>`,
           `<td>${open_date}</td>`,
           `<td>${price}</td>`,
@@ -171,10 +177,10 @@
     async function init() {
       const [tradesCsv, pricesCsv] = await Promise.all([
         fetchCSV(openTradesUrl),
-        fetchCSV(pricesUrl)
+        fetchCSV(indicatorsUrl)
       ]);
 
-      data_time = pricesCsv[0][11]
+      data_time = pricesCsv[0][8]
       document.getElementById('data_time').innerHTML = data_time
 
       const prices = parsePricesCSV(pricesCsv);

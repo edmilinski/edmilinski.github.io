@@ -68,7 +68,7 @@
   <div>
     <label>CSV URL:</label>
     <input type="text" id="csvUrl" size="80"
-      value="https://raw.githubusercontent.com/edmilinski/edmilinski.github.io/main/EM_StockTrading/Russell_1000_Prices.csv">
+      value="https://edmilinski.pythonanywhere.com/data/Russell_1000_Latest_Indicators.csv">
     <button onclick="loadCsv()">Load</button>
   </div>
 
@@ -84,7 +84,7 @@
         download: true,
         header: true,
         complete: (results) => {
-          data_time = results.meta.fields[12]
+          data_time = results.meta.fields[8]
           document.getElementById('data_time').innerHTML = data_time
 
           fullData = results.data.filter(row => row.symbol); // remove empty
@@ -113,7 +113,7 @@
       const table = document.getElementById('dataTable');
       if (!data.length) return;
 
-      const headers = ['symbol', 'change_pct', 'rsi', 'stoch', 'ma_diff', 'price'];
+      const headers = ['symbol', 'chg_1d', 'chg_30', 'rsi_1d', 'rsi_30', 'stoch_1d', 'stoch_30','price'];
       let html = '<thead><tr>';
       headers.forEach(h => {
         html += `<th onclick="sortBy('${h}')">${h}</th>`;
@@ -145,7 +145,7 @@
     function populateFilterColumns(columns) {
       const sel1 = document.getElementById('filterColumn1');
       const sel2 = document.getElementById('filterColumn2');
-      columns = ['symbol', 'change_pct', 'rsi', 'ma_diff']
+      columns = ['symbol', 'chg_1d', 'chg_30', 'rsi_1d', 'rsi_30', 'stoch_1d', 'stoch_30']
       const opts = ['<option value="">--ignore--</option>'].concat(columns.map(c => `<option value="${c}">${c}</option>`)).join('');
       sel1.innerHTML = opts;
       sel2.innerHTML = opts;
