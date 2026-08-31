@@ -1,4 +1,5 @@
 ticker,type,open_date,open_price,note
+AAPL,Long,2026-08-28 13:30,319.86,
 XLU,Long,2026-08-25 13:30,43.38,index pair !
 XLI,Long,2026-08-25 13:30,178.2,index pair
 XLF,Short,2026-08-25 13:30,58.23,index pair
