@@ -1,4 +1,3 @@
 ticker,type,open_date,open_price,note
 ARGT,Short,2026-08-31 13:00,94.8,pair etf. high stoch
 XLU,Long,2026-08-25 13:30,43.38,index pair !
-XLI,Long,2026-08-25 13:30,178.2,index pair
