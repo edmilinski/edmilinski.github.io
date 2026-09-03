@@ -1,3 +1,7 @@
 ticker,type,open_date,open_price,note
+CNH,Short,2026-09-03 14:30,13.65,pair. stoch diff to sector
+TTWO,Long,2026-09-03 14:30,215.9,pair. large diff stoch sector
+AGNC,Long,2026-09-03 14:30,10.65,pair. stoch diff to sector
+DE,Short,2026-09-03 14:30,686.65,pair. stoch diff to sector
 ANET,Long,2026-09-02 15:00,185.9,long short pair. large mrsi . rsi diff to sector and market
 ARGT,Short,2026-08-31 13:00,94.8,pair etf. high stoch
