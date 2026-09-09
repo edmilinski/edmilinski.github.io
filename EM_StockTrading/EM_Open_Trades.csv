@@ -1,4 +1,5 @@
 ticker,type,open_date,open_price,note
+AVY,Long,2026-09-09 15:00,170.3,daily pull back
 BSY,Long,2026-09-08 14:00,32.76,pair. stoch large diff to sect
 ADM,Short,2026-09-08 12:00,84.54,pair. stoch large diff to sect
 BILL,Long,2026-09-08 11:30,47.17,pair. stoch large diff to sector
