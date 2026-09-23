@@ -1,1 +1,5 @@
 ticker,type,open_date,open_price,note
+THG,Long,2026-09-23 14:30,218.74,daily . weekly MA-diff and trend-L diff. weak sect
+LSCC,Short,2026-09-23 14:30,121.38,daily . weekly MA-diff and trend-L diff. strong sect
+ALAB,Short,2026-09-23 14:30,360.86,daily . weekly MA-diff and trend-L diff. strong sect
+NTRS,Long,2026-09-23 14:30,174.6,daily . weekly MA-diff and trend-L diff. weak sect
