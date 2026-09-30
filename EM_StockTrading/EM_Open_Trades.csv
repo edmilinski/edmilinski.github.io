@@ -1,5 +1,4 @@
 ticker,type,open_date,open_price,note
 MTCH,Long,2026-09-29 16:00,40.2,TSM daily MA5-diff negative. weekly below TL
 TREX,Short,2026-09-28 15:00,44.44,ADX Dir above on daily and weekly. MA5-diff above 0. trend down. above trend-line
-RSG,Long,2026-09-24 15:00,213.5,sector stoch low. weekly trend-l up. last up. ma-diff 5 negative daily. weekly
 THG,Long,2026-09-23 15:30,218.74,daily . weekly MA-diff and trend-L diff. weak sect
