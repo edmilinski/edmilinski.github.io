@@ -1,4 +1,5 @@
 ticker,type,open_date,open_price,note
+DIS,Long,2026-10-02 13:00,102.55,sector daily.  up. last up. below daily TL
 QCOM,Long,2026-10-02 13:00,185.91,sector daily. weekly  up. stock stoch below. last up. below daily TL
 BIIB,Short,2026-10-01 14:00,225.6,sector dropping. stock stoch above. dropping
 MTCH,Long,2026-09-29 16:00,40.2,TSM daily MA5-diff negative. weekly below TL
