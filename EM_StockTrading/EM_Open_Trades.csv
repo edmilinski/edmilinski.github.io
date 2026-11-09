@@ -1,3 +1,5 @@
 ticker,type,open_date,open_price,note
+SPY,Long,2026-11-05 12:00,735.3,
+SOXL,Long,2026-11-05 12:00,47.16,
 NVR,Long,2026-10-06 14:30,6030.0,last up. sect stoch up high. weekly TL flat
 GE,Long,2026-10-06 14:30,308.85,last up. sect stoch up high.
